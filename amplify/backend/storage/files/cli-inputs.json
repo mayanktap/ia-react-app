@@ -1,0 +1,13 @@
+{
+  "resourceName": "files",
+  "policyUUID": "e3a61dd5",
+  "bucketName": "externaluseruploads",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
