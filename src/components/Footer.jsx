@@ -3,7 +3,7 @@ import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
-    <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
+    <div className={`${styles.flexStart} flex-col mb-8 w-full`}>
       <div className="md:flex md:justify-between">
         <span className="self-center text-white text-2m font-semibold whitespace-nowrap dark:text-white">SkyTL - The Ultimate Solution for Drone Data Management.</span>
       </div>

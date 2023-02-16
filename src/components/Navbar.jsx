@@ -1,11 +1,21 @@
 import { useState } from "react"
 import { navLinks } from '../constants'
 import { menublack, menuwhite, skytllogo, close } from "../assets";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+
+  function navElementClick(nav) {
+    if (nav.id === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${nav.id}`);
+    }
+    setActive(nav.title);
+  }
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -18,9 +28,9 @@ const Navbar = () => {
             className={`font-poppins font-normal cursor-pointer uppercase hover:text-sky-700 text-[16px] ${
               active === nav.title ? "text-white" : "text-dimWhite"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
+            onClick={() => navElementClick(nav)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <span>{nav.title}</span>
           </li>
         ))}
       </ul>
@@ -45,9 +55,9 @@ const Navbar = () => {
                 className={`font-poppins font-medium cursor-pointer hover:text-sky-700 text-[16px] ${
                   active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
+                onClick={() => navElementClick(nav)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <span>{nav.title}</span>
               </li>
             ))}
           </ul>

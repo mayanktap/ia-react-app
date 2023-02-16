@@ -1,5 +1,3 @@
-import { menublack, menuwhite, skytllogo } from "../assets";
-
 export const navLinks = [
   {
     id: "home",
@@ -14,12 +12,20 @@ export const navLinks = [
     title: "Product",
   },
   {
-    id: "clients",
-    title: "About Us",
+    id: "carddeal",
+    title: "Carddeal",
   },
   {
-    id: "newpage",
-    title: "New Page",
+    id: "clients",
+    title: "Clients",
+  },
+  {
+    id: "testimonials",
+    title: "Testimonials",
+  },
+  {
+    id: "cta",
+    title: "CTA",
   },
 ];
 
