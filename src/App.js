@@ -1,16 +1,25 @@
+import PropTypes from 'prop-types';
 import { Amplify, API, graphqlOperation, Storage } from 'aws-amplify';
-import { createTodo, updateTodo, deleteTodo } from './graphql/mutations';
+import { createTodo } from './graphql/mutations';
 import { listTodos } from './graphql/queries';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
-import { useEffect, useState, React } from 'react';
+import { useEffect, useState } from 'react';
 import {
-  Billing, Business, CardDeal, Clients, CTA, Footer, Hero, Navbar, Testimonials
-} from './components'
+  Billing,
+  Business,
+  CardDeal,
+  Clients,
+  CTA,
+  Footer,
+  Hero,
+  Navbar,
+  Testimonials,
+} from './components';
+import { Routes, Route } from 'react-router-dom';
 
-import { Routes, Route } from "react-router-dom";
 Amplify.configure(awsExports);
 
 const App = ({ signOut, user }) => {
@@ -18,16 +27,16 @@ const App = ({ signOut, user }) => {
   const [ fileStatus, setFileStatus ] = useState(false);
   const [ s3DownloadLinks, setS3DownloadLinks] = useState([]);
 
-  const uploadFile = async () => {
+  async function uploadFile() {
     const result = await Storage.put(fileData.name, fileData, {
       contentType: fileData.type,
     });
     setFileStatus(true);
-    console.log(21, result)
-  };
+    console.log(21, result);
+  }
 
   async function ListObjectsFromS3() {
-    const s3Objects = await Storage.list("");
+    const s3Objects = await Storage.list('');
     s3Objects.map(async (item) => {
       console.log(30, item);
       let downloadLink = await generateDownloadLinks(item.key);
@@ -40,22 +49,21 @@ const App = ({ signOut, user }) => {
 
   async function generateDownloadLinks(fileKey) {
     const result = await Storage.get(fileKey, { download: true });
-    return downloadBlob(result.Body, "filename");
+    return downloadBlob(result.Body);
   }
 
-  async function downloadBlob(blob, filename) {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
+  async function downloadBlob(blob) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
     return a;
   }
 
   useEffect(() => {
     async function createTodoItem() {
-      const todo = { name: "My second todo", description: "Hello world!" };
+      const todo = { name: 'My second todo', description: 'Hello world!' };
 
       /* create a todo */
-      await API.graphql(graphqlOperation(createTodo, {input: todo}));
+      await API.graphql(graphqlOperation(createTodo, { input: todo }));
     }
 
     async function ListTodoItems() {
@@ -71,10 +79,10 @@ const App = ({ signOut, user }) => {
   return (
     <>
       <div className='bg-primary w-full overflow-hidden'>
-        <div className={` ${styles.paddingX} ${styles.flexCenter} `}>
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <Navbar />
         </div>
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
             <Routes>
               <Route path="/" element={<Hero />} />
@@ -89,7 +97,7 @@ const App = ({ signOut, user }) => {
           </div>
         </div>
         <div>
-          <h1 className='container mx-auto bg-gray-200 rounded-xl'>
+          <h1 className='container mx-auto bg-gray-200'>
             Hello {user.username}
           </h1>
           <button onClick={signOut}>Sign out</button>
@@ -100,18 +108,22 @@ const App = ({ signOut, user }) => {
             <button onClick={uploadFile}>Upload file</button>
           </div>
           <div>{fileStatus ? 'File uploaded successfully' : ''}</div>
-            <div>{/* List all s3 objects and download by clicking on the link */}</div>
-            {s3DownloadLinks.map((item, index) => (
-              <div key={index}>
-                <a href={item} target="_blank" download="">
+          {s3DownloadLinks.map((item, index) => (
+            <div key={index}>
+              <a href={item} target="_blank" download="" rel="noreferrer">
                   Link {index}
-                </a>
-              </div>
-            ))}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </>
   );
+};
+
+App.propTypes = {
+  signOut: PropTypes.func,
+  user: PropTypes.object,
 };
 
 export default withAuthenticator(App);

@@ -1,5 +1,5 @@
-import { wildfireport, wildfirelight, city, citynyc } from "../assets";
-import styles, { layout } from "../style";
+import { citynyc, wildfirelight, wildfireport } from '../assets';
+import styles, { layout } from '../style';
 
 const Billing = () => (
   <section id="product" className={layout.sectionReverse}>
