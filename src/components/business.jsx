@@ -1,10 +1,10 @@
-import { features } from "../constants";
-import styles, { layout } from "../style";
-import Button from "./Button";
-import { Sparkles } from "heroicons-react";
+import PropTypes from 'prop-types';
+import { features } from '../constants';
+import styles, { layout } from '../style';
+import Button from './Button';
 
 const FeatureCard = ({ icon, title, content, index }) => (
-  <div className={`flex-row p-6 ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card border border-gray-200 rounded-lg shadow dark:bg-gray-800`}>
+  <div className={`flex-row p-6 ${index !== features.length - 1 ? 'mb-6' : 'mb-0'} feature-card border border-gray-200 rounded-lg shadow dark:bg-gray-800`}>
     <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
       <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
     </div>
@@ -17,24 +17,30 @@ const FeatureCard = ({ icon, title, content, index }) => (
       </p>
     </div>
   </div>
-  
 );
+
+FeatureCard.propTypes = {
+  content: PropTypes.string,
+  icon: PropTypes.string,
+  index: PropTypes.number,
+  title: PropTypes.string,
+};
 
 const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-      Powerful Image Processing,
- <br className="sm:block hidden" /> for Various Applications.
+        Powerful Image Processing,
+        <br className="sm:block hidden" /> for Various Applications.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-      Our image processing capabilities go beyond simple image storage. 
-      We use machine learning to turn raw drone footage into meaningful data that businesses can use for a wide range of applications. 
+        Our image processing capabilities go beyond simple image storage. 
+        We use machine learning to turn raw drone footage into meaningful data that businesses can use for a wide range of applications. 
       </p>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-      From improving situational awareness during disaster response operations to creating more accurate weather forecasts, SkyTL is the solution you need.
+        From improving situational awareness during disaster response operations to creating more accurate weather forecasts, SkyTL is the solution you need.
       </p>
-      <Button styles={`mt-10`} />
+      <Button styles={'mt-10'} />
     </div>
 
     <div className={`${layout.sectionImg} flex-col`}>
