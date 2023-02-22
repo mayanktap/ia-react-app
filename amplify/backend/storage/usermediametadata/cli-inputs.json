@@ -1,0 +1,14 @@
+{
+  "resourceName": "usermediametadata",
+  "tableName": "usermediametadata",
+  "partitionKey": {
+    "fieldName": "recordId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "formattedDate",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
