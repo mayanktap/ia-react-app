@@ -2,10 +2,15 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.6.2\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
-    "env": {
-      "Type": "String"
+    "CloudWatchRule": {
+      "Type": "String",
+      "Default": "NONE",
+      "Description": " Schedule Expression"
     },
     "deploymentBucketName": {
+      "Type": "String"
+    },
+    "env": {
       "Type": "String"
     },
     "s3Key": {
@@ -30,16 +35,24 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
         "Handler": "index.handler",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "S3Triggerf0f73646",
+            "mediaInformationHandler",
             {
               "Fn::Join": [
                 "",
                 [
-                  "S3Triggerf0f73646",
+                  "mediaInformationHandler",
                   "-",
                   {
                     "Ref": "env"
@@ -54,7 +67,7 @@
             "ENV": {
               "Ref": "env"
             },
-            "region": {
+            "REGION": {
               "Ref": "AWS::Region"
             },
             "dynamoname": "usermediametadata"
@@ -67,15 +80,8 @@
           ]
         },
         "Runtime": "nodejs14.x",
-        "Timeout": 25,
-        "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
-        }
+        "Layers": [],
+        "Timeout": 25
       }
     },
     "LambdaExecutionRole": {
@@ -84,12 +90,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "S3Triggerf0f73646LambdaRolef0f73646",
+            "amplifyauthappLambdaRole7b665ee9",
             {
               "Fn::Join": [
                 "",
                 [
-                  "S3Triggerf0f73646LambdaRolef0f73646",
+                  "amplifyauthappLambdaRole7b665ee9",
                   "-",
                   {
                     "Ref": "env"
@@ -161,6 +167,7 @@
               "Action": [
                 "dynamodb:DeleteItem",
                 "dynamodb:PutItem",
+                "dynamodb:Scan",
                 "dynamodb:UpdateItem",
                 "dynamodb:GetItem",
                 "dynamodb:Query"

@@ -4,6 +4,11 @@ export type AmplifyDependentResourcesAttributes = {
       "GraphQLAPIEndpointOutput": "string",
       "GraphQLAPIIdOutput": "string",
       "GraphQLAPIKeyOutput": "string"
+    },
+    "useruploadedmediainfo": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
     }
   },
   "auth": {
@@ -19,6 +24,13 @@ export type AmplifyDependentResourcesAttributes = {
   },
   "function": {
     "S3Triggerf0f73646": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "mediaInformationHandler": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

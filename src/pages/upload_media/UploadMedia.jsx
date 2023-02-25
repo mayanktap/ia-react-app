@@ -1,6 +1,7 @@
-import { Storage } from 'aws-amplify';
+import { Storage, API, Auth } from 'aws-amplify';
 import { useState, useEffect } from 'react';
 import {
+  Button,
   Flex,
   Link,
   Table,
@@ -57,6 +58,23 @@ const UploadMedia = () => {
       console.error(error);
       alert('Failed to show images');
     }
+  }
+
+  async function postData() {
+    const apiName = 'useruploadedmediainfo';
+    const path = '/media-info';
+    const myInit = {
+      body: {
+        key1: 'value1',
+        key2: 'value2',
+      }, // replace this with attributes you need
+      headers: {
+        Authorization: `Bearer ${(await Auth.currentSession())
+          .getIdToken()
+          .getJwtToken()}`,
+      },
+    };
+    return await API.post(apiName, path, myInit);
   }
 
   const [objects, setObjects] = useState([]);
@@ -123,6 +141,11 @@ const UploadMedia = () => {
           <img alt="" src={state.file} />
         </div> }
       </div>
+      <Button
+        className='u-mar-top-16  post-btn'
+        onClick={postData}>
+          Dummy DynomoDB Post
+      </Button>
     </div>
   );
 };
