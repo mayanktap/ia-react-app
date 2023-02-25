@@ -8,10 +8,10 @@ const Hero = () => {
     <div>
       <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
         <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
-          <div className="flex flex-row items-center py-[6px] px-4 border border-gray-200 rounded-lg shadow dark:bg-gray-1000">
-            <p className={`${styles.paragraph} ml-2`}>
-              <span className="text-white"></span> SkyTL{' '}
-              <span className="text-white"> - The Ultimate Solution for Drone Data Management</span>
+          <div className="flex flex-row items-center py-[6px] px-4 border border-gray-200 rounded-lg shadow dark:bg-gray-1000 mb-6">
+            <p className='ml-2'>
+              <span className="text-gradient text-bold"> SkyTL </span>
+              <span className="text-white"> - The Ultimate Solution for Drone Data Management </span>
             </p>
           </div>
 
