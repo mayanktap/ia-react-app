@@ -1144,6 +1144,10 @@ video {
   white-space: nowrap;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
