@@ -6,8 +6,9 @@
   "guestAccess": [],
   "authAccess": [
     "CREATE_AND_UPDATE",
-    "READ"
+    "READ",
+    "DELETE"
   ],
-  "triggerFunction": "NONE",
+  "triggerFunction": "S3Triggerf0f73646",
   "groupAccess": {}
 }

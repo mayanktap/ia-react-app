@@ -1491,13 +1491,13 @@ video {
   line-height: 21.58px;
 }
 
+.text-dimWhite {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-dimWhite {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .text-sky-500 {
