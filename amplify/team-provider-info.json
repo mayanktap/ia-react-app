@@ -38,6 +38,16 @@
       },
       "api": {
         "amplifyauthapp": {}
+      },
+      "function": {
+        "S3Triggerf0f73646": {
+          "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
+          "s3Key": "amplify-builds/S3Triggerf0f73646-38704130534e73535262-build.zip"
+        },
+        "mediaInformationHandler": {
+          "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
+          "s3Key": "amplify-builds/mediaInformationHandler-63474868396847775964-build.zip"
+        }
       }
     }
   },

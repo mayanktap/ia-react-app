@@ -1,6 +1,6 @@
 const MachineLearning = () => {
   return (
-    <section className="bg-black text-white">
+    <section className="text-white">
       <div className="container px-4 py-12 mx-auto">
         <h2 className="text-3xl font-bold text-teal-500 mb-8">ML DEVELOPMENT</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

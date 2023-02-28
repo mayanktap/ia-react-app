@@ -1,6 +1,6 @@
 const WhySkyTL = () => {
   return (
-    <div className="bg-black py-20">
+    <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 py-20">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-gradient uppercase">Why Choose SkyTL?</h2>
         <div className="flex flex-wrap text-white">
