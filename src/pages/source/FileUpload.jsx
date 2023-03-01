@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Storage } from 'aws-amplify';
+import { Storage, API } from 'aws-amplify';
 
 const FileUpload = () => {
   const [selectedTag, setSelectedTag] = useState('Select a tag');
   const [description, setDescription] = useState('');
   const [state, setState] = useState(0);
   const [objState, setObjState] = useState(0);
+  const [postSuccessMessage, setPostSuccessMessage] = useState('');
+  const [postErrorMessage, setPostErrorMessage] = useState('');
 
   async function onUpload(e) {
     const file = e.target.files[0];
@@ -46,7 +48,7 @@ const FileUpload = () => {
       alert('Image deleted successfully');
     } catch (error) {
       console.error(error);
-      alert('Failed to delete image');
+      alert('Failed to delete image.');
     }
   }
 
@@ -67,6 +69,26 @@ const FileUpload = () => {
   const handleSubmit = () => {
     console.log(`Selected tag: ${selectedTag}`);
     console.log(`Description: ${description}`);
+
+    API.post('useruploadedmediainfo', '/media-info', {
+      body: {
+        description: description,
+        selectedTag: selectedTag,
+        mediaFile: state.key,
+      },
+    }).then(response => {
+      console.log(response);
+      if (response === 'Record Successfully created') {
+        setSelectedTag('Select a tag');
+        setDescription('');
+        setObjState(0);
+        setState(0);
+        setPostSuccessMessage('Relevant Data is successfully created.');
+      }
+    }).catch(err => {
+      console.log(err);
+      setPostErrorMessage('Relevant Data failed to get created.');
+    });
   };
 
   return (
@@ -150,6 +172,18 @@ const FileUpload = () => {
       >
         Submit
       </button>
+      {
+        !!postSuccessMessage &&
+        <div className='text-white'>
+          {postSuccessMessage}
+        </div>
+      }
+      {
+        !!postErrorMessage &&
+        <div className='text-red'>
+          {postErrorMessage}
+        </div>
+      }
     </div>
   );
 };

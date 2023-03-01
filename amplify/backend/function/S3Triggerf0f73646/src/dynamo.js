@@ -57,7 +57,7 @@ class Dynamo {
 
     return {
       recordId: `${this.checkFileType(this.s3ObjectKey)}_${this.s3ObjectKey.replace('public/', '')}`,
-      formattedDate: currentDate.toISOString().substring(0, 10),
+      formattedDate: `${currentDate.toISOString().substring(0, 10)}-s3_media_metadata`,
       mediaType: this.checkFileType(this.s3ObjectKey),
       fileName: this.s3ObjectKey.replace('public/', ''),
       fileExtension: this.s3ObjectKey.substr(this.s3ObjectKey.lastIndexOf('.') + 1),
