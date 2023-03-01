@@ -14,6 +14,7 @@ import {
   //SkytlLogoBlack,
   //WildfireDefense,
   FSU,
+  //awsicon,
 } from '../../assets/index';
 
 const LogoGridPartners = () => {

@@ -6,7 +6,13 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Map } from './pages/geomap/Index'
+
+// AWS Geo Map Services
+import { createMap } from 'maplibre-gl-js-amplify';
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 import {
   Billing,
   Business,
@@ -23,7 +29,16 @@ import { Routes, Route } from 'react-router-dom';
 
 Amplify.configure(awsExports);
 
+//* --- CONSTANTS ---- */
+const INITIAL_VIEWPORT = {
+  longitude: -56.164532,
+  latitude: -34.901112,
+}
+
 const App = ({ signOut, user }) => {
+
+  const [map, setMap] = useState();
+
   useEffect(() => {
     async function createTodoItem() {
       const todo = { name: 'My second todo', description: 'Hello world!' };
@@ -37,6 +52,16 @@ const App = ({ signOut, user }) => {
       console.log(30, todos);
     }
 
+    const initializeMap = async () => {
+      const map = await createMap({
+        container: 'map', // an HTML element or HTML element ID to render the map
+        center: [INITIAL_VIEWPORT.longitude, INITIAL_VIEWPORT.latitude],
+        zoom: 13,
+      })
+      setMap(map)
+    }
+
+    initializeMap();
     ListTodoItems();
     createTodoItem();
   }, []);
@@ -63,6 +88,9 @@ const App = ({ signOut, user }) => {
           </div>
         </div>
         <div>
+          <div>
+            <Map myMap={map}/>
+          </div>
           <h1 className='container mx-auto bg-gray-200'>
             Hello {user.username}
           </h1>

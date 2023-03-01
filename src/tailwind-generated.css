@@ -862,6 +862,10 @@ video {
   height: 27.6px;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-\[21px\] {
   height: 21px;
 }
@@ -908,10 +912,6 @@ video {
 
 .h-\[64px\] {
   height: 64px;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .h-full {
