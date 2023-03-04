@@ -21,6 +21,7 @@ import {
   Testimonials,
 } from './components';
 import UploadMedia from './pages/upload_media/UploadMedia';
+import GeoMap from './pages/geo_map/GeoMap';
 import { Routes, Route } from 'react-router-dom';
 
 Amplify.configure(awsExports);
@@ -61,6 +62,7 @@ const App = ({ signOut, user }) => {
               <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/cta" element={<CTA />} />
               <Route path="/upload_media" element={<UploadMedia />} />
+              <Route path="/geo_map" element={<GeoMap />} />
             </Routes>
             <Footer />
           </div>

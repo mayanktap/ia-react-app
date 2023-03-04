@@ -39,7 +39,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "geo": {
-    "geomap01": {
+    "geoMapDisplay": {
       "Arn": "string",
       "Name": "string",
       "Region": "string",

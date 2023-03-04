@@ -27,6 +27,10 @@ export const navLinks = [
     id: 'cta',
     title: 'CTA',
   },
+  {
+    id: 'geo_map',
+    title: 'GeoMap',
+  },
 ];
 
 export const features = [

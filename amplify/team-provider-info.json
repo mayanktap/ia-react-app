@@ -51,6 +51,9 @@
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
           "s3Key": "amplify-builds/mediaInformationHandler-6b664638303462703568-build.zip"
         }
+      },
+      "geo": {
+        "geoMapDisplay": {}
       }
     }
   },

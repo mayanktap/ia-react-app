@@ -86,7 +86,24 @@
       "service": "Lambda"
     }
   },
-  "geo": {},
+  "geo": {
+    "geoMapDisplay": {
+      "accessType": "AuthorizedUsers",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyauthappa0143ccf"
+        }
+      ],
+      "isDefault": true,
+      "mapStyle": "VectorEsriNavigation",
+      "providerPlugin": "awscloudformation",
+      "service": "Map"
+    }
+  },
   "parameters": {
     "AMPLIFY_function_S3Triggerf0f73646_deploymentBucketName": {
       "usedBy": [
