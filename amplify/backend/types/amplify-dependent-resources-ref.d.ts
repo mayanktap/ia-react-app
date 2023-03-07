@@ -20,6 +20,9 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
+    },
+    "userPoolGroups": {
+      "geomapuserpoolgroupGroupRole": "string"
     }
   },
   "function": {
@@ -39,7 +42,12 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "geo": {
-    "geoMapDisplay": {
+    "geofenceCollectionc4084089": {
+      "Arn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "map4e0345ed": {
       "Arn": "string",
       "Name": "string",
       "Region": "string",

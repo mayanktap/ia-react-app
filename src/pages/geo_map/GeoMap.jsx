@@ -1,31 +1,28 @@
-import { createMap } from 'maplibre-gl-js-amplify';
+import { MapView } from '@aws-amplify/ui-react';
+import { useControl } from 'react-map-gl';
+import { AmplifyGeofenceControl } from 'maplibre-gl-js-amplify';
+import '@aws-amplify/ui-react/styles.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import Map from './components/Map';
-import { useState, useEffect } from 'react';
+import 'maplibre-gl-js-amplify/dist/public/amplify-ctrl-geofence.css';
 
-const INITIAL_VIEWPORT = {
-  longitude: -56.164532,
-  latitude: -34.901112,
-};
+function Geofence() {
+  useControl(() => new AmplifyGeofenceControl());
 
-const GeoMap = () => {
-  const [map, setMap] = useState();
+  return null;
+}
 
-  useEffect(() => {
-    const initializeMap = async () => {
-      const map = await createMap({
-        container: 'map',
-        center: [INITIAL_VIEWPORT.longitude, INITIAL_VIEWPORT.latitude],
-        zoom: 13,
-      });
-      setMap(map);
-    };
-    initializeMap();
-  }, []);
-
-  return(
+function GeoMap() {
+  return (
     <div>
-      <Map myMap={map} />
+      <MapView
+        initialViewState={{
+          latitude: 37.8,
+          longitude: -122.4,
+          zoom: 14,
+        }}
+      >
+        <Geofence />
+      </MapView>
     </div>
   );
 }

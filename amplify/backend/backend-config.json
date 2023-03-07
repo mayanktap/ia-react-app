@@ -72,6 +72,22 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyauthappa0143ccf"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
@@ -87,7 +103,29 @@
     }
   },
   "geo": {
-    "geoMapDisplay": {
+    "geofenceCollectionc4084089": {
+      "accessType": "CognitoGroups",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyauthappa0143ccf"
+        },
+        {
+          "attributes": [
+            "geomapuserpoolgroupGroupRole"
+          ],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        }
+      ],
+      "isDefault": true,
+      "providerPlugin": "awscloudformation",
+      "service": "GeofenceCollection"
+    },
+    "map4e0345ed": {
       "accessType": "AuthorizedUsers",
       "dependsOn": [
         {
@@ -99,7 +137,7 @@
         }
       ],
       "isDefault": true,
-      "mapStyle": "VectorEsriNavigation",
+      "mapStyle": "VectorEsriStreets",
       "providerPlugin": "awscloudformation",
       "service": "Map"
     }

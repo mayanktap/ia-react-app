@@ -32,7 +32,8 @@
     },
     "categories": {
       "auth": {
-        "amplifyauthappa0143ccf": {}
+        "amplifyauthappa0143ccf": {},
+        "userPoolGroups": {}
       },
       "storage": {
         "files": {},
@@ -53,7 +54,8 @@
         }
       },
       "geo": {
-        "geoMapDisplay": {}
+        "geofenceCollectionc4084089": {},
+        "map4e0345ed": {}
       }
     }
   },

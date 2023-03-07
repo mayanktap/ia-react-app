@@ -5,7 +5,7 @@
   "unauthRoleName": {
     "Ref": "UnauthRoleName"
   },
-  "mapName": "geoMapDisplay",
-  "mapStyle": "VectorEsriNavigation",
+  "mapName": "map4e0345ed",
+  "mapStyle": "VectorEsriStreets",
   "isDefault": true
 }
