@@ -90,7 +90,6 @@ const FileUpload = () => {
       setPostErrorMessage('Relevant Data failed to get created.');
     });
   };
-
   return (
     <div className='flex flex-col gap-4 py-10'>
       <div className='flex flex-col gap-1'>
@@ -161,7 +160,8 @@ const FileUpload = () => {
 
       <button
         className=" text-white 
-        bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600
+        text-extrabold
+        bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
         hover:bg-gradient-to-br
         focus:ring-4 focus:outline-none focus:ring-teal-300
         dark:focus:ring-teal-800

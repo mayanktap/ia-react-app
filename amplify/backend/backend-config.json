@@ -86,6 +86,7 @@
       "service": "Lambda"
     }
   },
+  "geo": {},
   "parameters": {
     "AMPLIFY_function_S3Triggerf0f73646_deploymentBucketName": {
       "usedBy": [

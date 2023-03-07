@@ -7,6 +7,8 @@ import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
 import { useEffect } from 'react';
+// AWS Geo Map Services
+
 import {
   Billing,
   Business,
@@ -24,6 +26,7 @@ import { Routes, Route } from 'react-router-dom';
 Amplify.configure(awsExports);
 
 const App = ({ signOut, user }) => {
+
   useEffect(() => {
     async function createTodoItem() {
       const todo = { name: 'My second todo', description: 'Hello world!' };
@@ -63,6 +66,8 @@ const App = ({ signOut, user }) => {
           </div>
         </div>
         <div>
+          <div className='bg-white'>
+          </div>
           <h1 className='container mx-auto bg-gray-200'>
             Hello {user.username}
           </h1>

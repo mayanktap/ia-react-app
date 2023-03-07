@@ -1,6 +1,6 @@
 function BetterData() {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
