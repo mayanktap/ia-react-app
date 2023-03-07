@@ -86,24 +86,7 @@
       "service": "Lambda"
     }
   },
-  "geo": {
-    "geomap01": {
-      "accessType": "AuthorizedUsers",
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "amplifyauthappa0143ccf"
-        }
-      ],
-      "isDefault": true,
-      "mapStyle": "VectorEsriStreets",
-      "providerPlugin": "awscloudformation",
-      "service": "Map"
-    }
-  },
+  "geo": {},
   "parameters": {
     "AMPLIFY_function_S3Triggerf0f73646_deploymentBucketName": {
       "usedBy": [
