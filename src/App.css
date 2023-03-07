@@ -38,7 +38,6 @@
 }
 
 #map {
-  /* The id of the container to createMap */
   height: 120vh;
   width: 100vw;
   margin: auto;

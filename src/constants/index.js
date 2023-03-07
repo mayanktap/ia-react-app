@@ -53,6 +53,30 @@ export const features = [
   },
 ];
 
+export const home_features = [
+  {
+    id: 'feature-1',
+    //icon: star,
+    title: 'Streaming',
+    content:
+      'Real-time delivery of actionable intelligence that combines data, imagery, and analysis.',
+  },
+  {
+    id: 'feature-2',
+    //icon: shield,
+    title: 'Safety',
+    content:
+      ' Our platform uses UAS data and advanced algorithms for situational awareness.',
+  },
+  {
+    id: 'feature-3',
+    //icon: shield,
+    title: 'Cloud Computing',
+    content:
+      'With our cloud computing and machine learning capabilities, we process and analyze data in real-time, providing actionable insights to clients and minimizing risk.',
+  },
+];
+
 export const feedback = [
   {
     id: 'feedback-1',

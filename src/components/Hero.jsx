@@ -1,7 +1,13 @@
 import styles from '../style';
 import { drone1 } from '../assets';
 import GetStarted from './GetStarted';
-import Stats from './stats'
+import { 
+  Stats, 
+  HomePageUploadRequest, 
+  HomePageCrowdSourcing,
+  HomePageMachineLearning,
+  HomePageDataProvider,
+} from './'
 
 const Hero = () => {
   return (
@@ -18,7 +24,8 @@ const Hero = () => {
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="flex-1 font-semibold ss:text-[72px] text-white ss:leading-[100.8px] leading-[75px]">
               Cutting-Edge <br className="sm:block hidden" />{' '}
-              <span className="text-gradient">UAS TECHNOLOGY</span>{' '}
+              <span className="text-gradient">UAS</span>{' '}
+              <span className="text-gradient">TECHNOLOGY</span>{' '}
             </h1>
             <div className="ss:flex hidden md:mr-4 mr-0">
               <GetStarted />
@@ -29,7 +36,9 @@ const Hero = () => {
               TO POWER YOUR BUSINESS.
           </h1>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-            Do not let data management be a hindrance to your operations. Let SkyTL make your data homogeneous and accessible,
+            Do not let data management be a hindrance to your operations. Let 
+            <span className="text-gradient"> SkyTL </span> 
+            make your data homogeneous and accessible,
             giving you the information you need, when you need it.
           </p>
         </div>
@@ -49,6 +58,10 @@ const Hero = () => {
         </div>
       </section>
       <Stats />
+      <HomePageCrowdSourcing />
+      <HomePageUploadRequest />
+      <HomePageMachineLearning />
+      <HomePageDataProvider />
     </div>
   );
 };

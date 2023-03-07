@@ -1,6 +1,6 @@
 const CustomersHero = () => {
   return (
-    <div className="bg-gradient-to-r from-pink-800 to-blue-800 text-white py-12 px-8 sm:px-16 md:px-24 lg:px-32">
+    <div className="bg-gradient-to-r from-pink-800 to-blue-800 text-white py-12 px-8 sm:px-16 md:px-24 lg:px-32 rounded-lg">
       <div className="text-center">
         <h2 className="text-4xl font-bold mb-4">Customers</h2>
         <p className="text-lg leading-7 mb-8">
