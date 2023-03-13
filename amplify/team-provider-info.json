@@ -32,7 +32,8 @@
     },
     "categories": {
       "auth": {
-        "amplifyauthappa0143ccf": {}
+        "amplifyauthappa0143ccf": {},
+        "userPoolGroups": {}
       },
       "storage": {
         "files": {},
@@ -51,6 +52,10 @@
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
           "s3Key": "amplify-builds/mediaInformationHandler-6b664638303462703568-build.zip"
         }
+      },
+      "geo": {
+        "geofenceCollectionc4084089": {},
+        "map4e0345ed": {}
       }
     }
   },
