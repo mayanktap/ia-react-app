@@ -4,18 +4,18 @@
 import { 
   About,
   Stats,
-  CustomerChevron,
   AboutVideo,
   Information,
-} from '../pages/about';
+  KeenSlider,
+} from '../pages/about/index';
 
 const CardDeal = () => (
   <section>
     <div>
       <About />
       <Stats />
-      <CustomerChevron />
       <Information />
+      <KeenSlider />
       <AboutVideo />
     </div>
   </section>

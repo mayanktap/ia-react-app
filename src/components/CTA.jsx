@@ -4,6 +4,7 @@ import {
   LogoGridPartners,
   LogoGridSupportingOrgs,
   LogoGridIndustryPartners,
+  CarouselAxis,
 } from '../pages/customers/Index';
 import styles from '../style';
 
@@ -14,6 +15,7 @@ const Customers = () => (
     <LogoGridIndustryPartners />
     <LogoGridPartners />
     <LogoGridSupportingOrgs />
+    <CarouselAxis />
   </section>
 );
 

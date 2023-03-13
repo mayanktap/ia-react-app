@@ -18,7 +18,7 @@ const images = [
     src: 'https://via.placeholder.com/500x250/000000/FFFFFF/?text=Image+3',
   },
   {
-    id: 4,
+    id: 4,  
     alt: 'image4',
     src: 'https://via.placeholder.com/500x250/000000/FFFFFF/?text=Image+4',
   },
@@ -37,13 +37,13 @@ export default function Carousel() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-black">
-      <div className="relative w-full max-w-xl">
-        <div className="relative">
+      <div className="relative w-full max-w-xl overflow-hidden">
+        <div className="absolute inset-0 flex">
           {images.map((image, index) => (
             <div
               key={image.id}
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-                activeIndex === index ? 'opacity-100' : 'opacity-0'
+              className={`w-full flex-shrink-0 transform transition-transform duration-1000 ${
+                activeIndex === index ? 'translate-x-0' : '-translate-x-full'
               }`}
             >
               <img
