@@ -1,21 +1,19 @@
 import { 
   CustomersHero,
-  LogoGridCustomers,
-  LogoGridPartners,
-  LogoGridSupportingOrgs,
-  LogoGridIndustryPartners,
-  CarouselAxis,
+  CarouselAxisFederal,
+  CarouselAxisIndustry,
+  CarouselAxisAcademic,
+  CarouselAxisSupporting,
 } from '../pages/customers/Index';
 import styles from '../style';
 
 const Customers = () => (
   <section className={`${styles.paddingY} ${styles.flexCenter} flex-col relative`}>
     <CustomersHero />
-    <LogoGridCustomers />
-    <LogoGridIndustryPartners />
-    <LogoGridPartners />
-    <LogoGridSupportingOrgs />
-    <CarouselAxis />
+    <CarouselAxisFederal />
+    <CarouselAxisIndustry />
+    <CarouselAxisAcademic />
+    <CarouselAxisSupporting />
   </section>
 );
 

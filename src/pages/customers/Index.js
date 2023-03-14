@@ -3,7 +3,10 @@ import LogoGridCustomers from './LogoGridCustomers'
 import LogoGridPartners from './LogoGridPartners'
 import LogoGridSupportingOrgs from './LogoGridSupportingOrgs'
 import LogoGridIndustryPartners from './LogoGridIndustryPartners'
-import CarouselAxis from './CarouselAxis'
+import CarouselAxisFederal from './CarouselAxisFederal'
+import CarouselAxisIndustry from './CarouselAxisIndustry'
+import CarouselAxisAcademic from './CarouselAxisAcademic'
+import CarouselAxisSupporting from './CarouselAxisSupporting'
 
 export {
   CustomersHero,
@@ -11,5 +14,8 @@ export {
   LogoGridPartners,
   LogoGridSupportingOrgs,
   LogoGridIndustryPartners,
-  CarouselAxis,
+  CarouselAxisFederal,
+  CarouselAxisIndustry,
+  CarouselAxisAcademic,
+  CarouselAxisSupporting,
 }
