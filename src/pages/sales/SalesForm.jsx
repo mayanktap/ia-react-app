@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CheckBox from './CheckBox'
 
 function SalesForm() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,9 @@ function SalesForm() {
   };
 
   return (
-    <div className='max-w-3xl mx-auto'>
+    <section className='bg-gradient-to-l from-teal-400 via-teal-500 to-teal-600 py-5 rounded-lg'>
+        <div className='text-center text-gray-700 font-bold mb-2'>Fill Out The Form Below</div>
+    <div className='max-w-3xl mx-auto p-10'>
       <form onSubmit={handleSubmit}>
         <div className='grid grid-cols-2 gap-4'>
           <div>
@@ -152,9 +155,21 @@ function SalesForm() {
           />
         </div>
 
+        <div>
+            <CheckBox />
+        </div>
+
         <div className="mt-8">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="text-white 
+            text-extrabold
+            bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
+            hover:bg-gradient-to-br
+            focus:ring-4 focus:outline-none focus:ring-teal-300
+            dark:focus:ring-teal-800
+            font-medium rounded-lg text-sm
+            px-5 py-2.5
+            text-center"
             type="submit"
           >
             Submit
@@ -162,6 +177,7 @@ function SalesForm() {
         </div>
       </form>
     </div>
+    </section>
   );
 }
 

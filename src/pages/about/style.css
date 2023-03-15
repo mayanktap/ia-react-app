@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  [class^="number-slide"],
+  [class*=" number-slide"] {
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+    height: 300px;
+    max-height: 100vh;
+  }
+  
+  .number-slide1 {
+    background: rgb(144, 144, 144);
+    background: linear-gradient(
+      128deg,
+      rgba(52, 152, 219, 0.8) 0%,
+      rgba(142, 68, 173, 0.8) 100%
+    );
+  }
+  
+  .number-slide2 {
+    background: rgb(144, 144, 144);
+    background: linear-gradient(
+      128deg,
+      rgba(142, 68, 173, 0.8) 0%,
+      rgba(52, 152, 219, 0.8) 100%
+    );
+  }
+  
+  .number-slide3 {
+    background: rgb(144, 144, 144);
+    background: linear-gradient(
+      128deg,
+      rgba(52, 152, 219, 0.8) 0%,
+      rgba(142, 68, 173, 0.8) 100%
+    );
+  }
+  
+  .number-slide4 {
+    background: rgb(144, 144, 144);
+    background: linear-gradient(
+      128deg,
+      rgba(142, 68, 173, 0.8) 0%,
+      rgba(52, 152, 219, 0.8) 100%
+    );
+  }
+  
+  .number-slide5 {
+    background: rgb(64, 76, 255);
+    background: linear-gradient(
+      128deg,
+      rgba(52, 152, 219, 0.8) 0%,
+      rgba(142, 68, 173, 0.8) 100%
+    );
+  }
+  .number-slide6 {
+    background: rgb(144, 144, 144);
+    background: linear-gradient(
+      128deg,
+      rgba(142, 68, 173, 0.8) 0%,
+      rgba(52, 152, 219, 0.8) 100%
+    );
+  }

@@ -39,7 +39,7 @@ const LogoGridSupportingOrgs = () => {
 
   return (
     <div className="container mx-auto pb-20">
-      <h1 className="text-left text-white uppercase pb-20">Supporting Organizations</h1>
+      <h1 className="text-left text-white uppercase pb-20">Supporting Orgs</h1>
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {logos.map((logo) => (
           <div key={logo.id} className="flex items-center justify-center bg-gradient-to-r from-gray-200 to-blue-800 rounded-lg">

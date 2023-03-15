@@ -1,28 +1,4 @@
-import {
-  nasalogo,
-  noaalogo, 
-  FAA,
-} from '../../assets/index';
-
 const LogoGridCustomers = () => {
-  const logos = [
-    {
-      id: 1,
-      image: nasalogo,
-      alt: 'Logo 1',
-    },
-    {
-      id: 2,
-      image: noaalogo,
-      alt: 'Logo 2',
-    },
-    {
-      id: 3,
-      image: FAA,
-      alt: 'Logo 3',
-    },
-    // add more logos here
-  ];
 
   return (
     <div className="bg-black container mx-auto py-10 pb-20">
