@@ -11,7 +11,7 @@ function CheckBox() {
     industry: '',
     jobTitle: '',
     agreeToTerms: false,
-});
+  });
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -113,7 +113,7 @@ function CheckBox() {
         </div>
       </form>
     </div>
-   );
+  );
 }
 
 export default CheckBox; 
