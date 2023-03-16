@@ -1,6 +1,6 @@
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import "./styles.css"
+import { useKeenSlider } from 'keen-slider/react'
+import 'keen-slider/keen-slider.min.css'
+import './styles.css'
 import {
   //nasalogo,
   //noaalogo, 
@@ -26,23 +26,23 @@ const carousel = (slider) => {
     const deg = 360 * slider.track.details.progress
     slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
   }
-  slider.on("created", () => {
+  slider.on('created', () => {
     const deg = 360 / slider.slides.length
     slider.slides.forEach((element, idx) => {
       element.style.transform = `rotateY(${deg * idx}deg) translateZ(${z}px)`
     })
     rotate()
   })
-  slider.on("detailsChanged", rotate)
+  slider.on('detailsChanged', rotate)
 }
 
 export default function CarouselAxisAcademic() {
   const [sliderRef] = useKeenSlider(
     {
       loop: true,
-      selector: ".carousel__cell",
-      renderMode: "custom",
-      mode: "free-snap",
+      selector: '.carousel__cell',
+      renderMode: 'custom',
+      mode: 'free-snap',
     },
     [carousel]
   )

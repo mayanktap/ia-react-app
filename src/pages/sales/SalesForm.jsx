@@ -31,137 +31,137 @@ function SalesForm() {
 
   return (
     <section className='bg-gradient-to-l from-teal-400 via-teal-500 to-teal-600 py-5 rounded-lg'>
-        <div className='text-center text-gray-700 font-bold mb-2'>Fill Out The Form Below</div>
-    <div className='max-w-3xl mx-auto p-10'>
-      <form onSubmit={handleSubmit}>
-        <div className='grid grid-cols-2 gap-4'>
-          <div>
-            <label
-              className='block text-gray-700 font-bold mb-2'
-              htmlFor="firstName"
-            >
+      <div className='text-center text-gray-700 font-bold mb-2'>Fill Out The Form Below</div>
+      <div className='max-w-3xl mx-auto p-10'>
+        <form onSubmit={handleSubmit}>
+          <div className='grid grid-cols-2 gap-4'>
+            <div>
+              <label
+                className='block text-gray-700 font-bold mb-2'
+                htmlFor="firstName"
+              >
               First Name
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="block text-gray-700 font-bold mb-2"
-              htmlFor="lastName"
-            >
+              </label>
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label
+                className="block text-gray-700 font-bold mb-2"
+                htmlFor="lastName"
+              >
               Last Name
+              </label>
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <label
+                className="block text-gray-700 font-bold mb-2"
+                htmlFor="email"
+              >
+              Email
+              </label>
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label
+                className="block text-gray-700 font-bold mb-2"
+                htmlFor="phone"
+              >
+              Phone
+              </label>
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <label
+              className="block text-gray-700 font-bold mb-2"
+              htmlFor="industry"
+            >
+            Industry
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              name="lastName"
-              value={formData.lastName}
+              name="industry"
+              value={formData.industry}
               onChange={handleInputChange}
               required
             />
           </div>
-        </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-4">
-          <div>
+          <div className="mt-4">
             <label
               className="block text-gray-700 font-bold mb-2"
-              htmlFor="email"
+              htmlFor="jobTitle"
             >
-              Email
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <label
-              className="block text-gray-700 font-bold mb-2"
-              htmlFor="phone"
-            >
-              Phone
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="industry"
-          >
-            Industry
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            name="industry"
-            value={formData.industry}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <div className="mt-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="jobTitle"
-          >
             Job Title
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            name="jobTitle"
-            value={formData.jobTitle}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+            </label>
+            <input
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="jobTitle"
+              value={formData.jobTitle}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
 
-        <div className="mt-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="describe"
-          >
+          <div className="mt-4">
+            <label
+              className="block text-gray-700 font-bold mb-2"
+              htmlFor="describe"
+            >
             Please Describe Your Use Case or Request*
-          </label>
-          <textarea
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            name="describe"
-            rows="5"
-            value={formData.describe}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+            </label>
+            <textarea
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="describe"
+              rows="5"
+              value={formData.describe}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
 
-        <div>
+          <div>
             <CheckBox />
-        </div>
+          </div>
 
-        <div className="mt-8">
-          <button
-            className="text-white 
+          <div className="mt-8">
+            <button
+              className="text-white 
             text-extrabold
             bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
             hover:bg-gradient-to-br
@@ -170,13 +170,13 @@ function SalesForm() {
             font-medium rounded-lg text-sm
             px-5 py-2.5
             text-center"
-            type="submit"
-          >
+              type="submit"
+            >
             Submit
-          </button>
-        </div>
-      </form>
-    </div>
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
