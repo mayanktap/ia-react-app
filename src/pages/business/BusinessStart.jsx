@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <div className={`flex-row p-6 ${index !== features.length - 1 ? 'mb-6' : 'mb-0'} feature-card border border-gray-200 rounded-lg shadow dark:bg-gray-800`}>
-    <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
+    <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue ${styles.paragraph}`}>
       <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
     </div>
     <div className="flex-1 flex flex-col ml-4">
