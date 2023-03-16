@@ -1,4 +1,4 @@
-const LogoGridCustomers = () => {
+const LogoGridCustomers = (logos) => {
 
   return (
     <div className="bg-black container mx-auto py-10 pb-20">
