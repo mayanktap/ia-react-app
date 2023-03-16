@@ -8,7 +8,7 @@ import {
 
 const animation = { duration: 20000, easing: (t) => t }
 
-export default () => {
+export default function KeenSlider() {
   const [sliderRef] = useKeenSlider({
     loop: true,
     renderMode: 'performance',

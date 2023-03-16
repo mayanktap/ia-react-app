@@ -22,7 +22,7 @@ function Testimonial() {
           <div className={`relative ${isHovered ? 'opacity-100' : 'opacity-100'}`}>
             <img src={nasalogo} alt='Toyota logo' className='h-16 w-auto sm:h-20' />
             <p className='mt-2 text-red'>
-              "Quote From Client"
+              &quot;Quote From Client&quot;
             </p>
             <div className='mt-4'>
               <p className='text-base font-semibold'>Adrien Gaidon</p>
