@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/ui-react": "^2.20.0",
+    "@aws-amplify/ui-react": "^4.3.5",
     "@chakra-ui/react": "^2.5.1",
     "@heroicons/react": "^2.0.16",
     "@testing-library/jest-dom": "^5.16.5",
