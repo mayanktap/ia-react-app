@@ -55,7 +55,7 @@ const Stats = () => (
       <div className="mt-12 flex justify-center items-center">
         <img
           src=''
-          alt="San Francisco skyline"
+          alt="Tampa, Florida, USA"
           className="rounded-lg shadow-md"
         />
       </div>

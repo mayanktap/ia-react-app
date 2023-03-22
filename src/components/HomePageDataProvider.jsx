@@ -37,17 +37,18 @@ const HomePageDataProvider = () => (
 
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
-          Join 
-          <br className="sm:block hidden" /> Our Network
+          <span className='text-gradient'>Join </span>
+          <span className='text-gradient'>Our </span> 
+          <span className='text-gradient'>Network</span>  
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Gain access to valuable insights derived from crowd-sourced data, processed through our advanced algorithms and machine learning models.
+        Our data providing community is made up of individuals who are passionate about data and technology. We believe that together, we can make a difference by providing high-quality data that can be used to improve businesses and communities.
         </p>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          These insights can help you make more informed decisions and minimize risk. SkyTL&#39;s intelligence services provide valuable insights to global insurance and commercial clients. 
+        We are looking to specialize in providing hyper-local data that can be captured by drones, catering to customers and applications that require more accurate and timely information than what is provided by forecast weather or satellite imagery.
         </p>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          From improving situational awareness during disaster response operations to creating more accurate weather forecasts, SkyTL is the solution you need.
+        Specifically, we are interested in identifying geospatial intelligence applications that necessitate this level of data granularity, and focusing our efforts on meeting those needs.
         </p>
         <Button styles={'mt-10'} />
       </div>

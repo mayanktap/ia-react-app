@@ -61,23 +61,23 @@ export const home_features = [
   {
     id: 'feature-1',
     //icon: star,
-    title: 'Streaming',
+    title: 'Collect and Prepare Data',
     content:
-      'Real-time delivery of actionable intelligence that combines data, imagery, and analysis.',
+      'Collect hyper-local data using state of the art sensors and cameras.',
   },
   {
     id: 'feature-2',
     //icon: shield,
-    title: 'Safety',
+    title: 'Upload to Our Marketplace',
     content:
-      ' Our platform uses UAS data and advanced algorithms for situational awareness.',
+      'Our platform provides a direct connection between data sellers and buyers, ensuring seamless transactions and revenue generation.',
   },
   {
     id: 'feature-3',
     //icon: shield,
-    title: 'Cloud Computing',
+    title: 'Get Paid When Your Data Sells',
     content:
-      'With our cloud computing and machine learning capabilities, we process and analyze data in real-time, providing actionable insights to clients and minimizing risk.',
+      'When your UAS data sells on our platform, we split the revenue with you.',
   },
 ];
 

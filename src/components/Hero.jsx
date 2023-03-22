@@ -5,7 +5,7 @@ import {
   Stats, 
   HomePageUploadRequest, 
   HomePageCrowdSourcing,
-  HomePageMachineLearning,
+  HomePageFeatures,
   HomePageDataProvider,
 } from './'
 
@@ -17,15 +17,15 @@ const Hero = () => {
           <div className="flex flex-row items-center py-[6px] px-4 border border-gray-200 rounded-lg shadow dark:bg-gray-1000 mb-6">
             <p className='ml-2'>
               <span className="text-gradient text-bold"> SkyTL </span>
-              <span className="text-white"> - The Ultimate Solution for Drone Data Management </span>
+              <span className="text-white"> - Providing Hyper-Local Data to Make Informed Decisions</span>
             </p>
           </div>
 
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="flex-1 font-semibold ss:text-[72px] text-white ss:leading-[100.8px] leading-[75px]">
               Cutting-Edge <br className="sm:block hidden" />{' '}
-              <span className="text-gradient">UAS</span>{' '}
-              <span className="text-gradient">TECHNOLOGY</span>{' '}
+              <span className="text-gradient uppercase">Geospatial-</span>{' '}
+              <span className="text-gradient uppercase">Technology</span>{' '}
             </h1>
             <div className="ss:flex hidden md:mr-4 mr-0">
               <GetStarted />
@@ -33,13 +33,11 @@ const Hero = () => {
           </div>
 
           <h1 className="font-semibold ss:text-[68px] text-white ss:leading-[100.8px] leading-[75px] w-full">
-              TO POWER YOUR BUSINESS.
+            Powered By UAS Technology
           </h1>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-            Do not let data management be a hindrance to your operations. Let 
             <span className="text-gradient"> SkyTL </span> 
-            make your data homogeneous and accessible,
-            giving you the information you need, when you need it.
+            delivers cost-effective geospatial analytics powered by AI and multi-sensor data. Get informed insights anytime, anywhere. 
           </p>
         </div>
 
@@ -60,7 +58,7 @@ const Hero = () => {
       <Stats />
       <HomePageCrowdSourcing />
       <HomePageUploadRequest />
-      <HomePageMachineLearning />
+      <HomePageFeatures />
       <HomePageDataProvider />
     </div>
   );

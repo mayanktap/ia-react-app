@@ -27,6 +27,12 @@ import WildfireDefense from './WildfireDefenseSystems.png'
 import awsicon from './aws-icon.png'
 import wildfiremp4 from './forest-fire-burning.mp4'
 import agriculturemp4 from './agriculture.mp4'
+import wildfire_up_close from './wildfire_up_close.jpg'
+import agriculture_drone from './agriculture_drone.jpg'
+import pollution from './pollution.jpg'
+import crane from './crane.jpg'
+import wildfire_close from './wildfire_close.jpg'
+import water_quality from './water_quality.jpg'
 
 export {
   menublack,
@@ -58,4 +64,10 @@ export {
   awsicon,
   wildfiremp4,
   agriculturemp4,
+  wildfire_up_close,
+  agriculture_drone,
+  pollution,
+  crane,
+  wildfire_close,
+  water_quality,
 };
