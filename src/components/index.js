@@ -12,6 +12,7 @@ import HomePageUploadRequest from './HomePageUploadRequest'
 import HomePageCrowdSourcing from './HomePageCrowdSourcing'
 import HomePageMachineLearning from './HomePageMachineLearning'
 import HomePageDataProvider from './HomePageDataProvider'
+import HomePageFeatures from './HomePageFeatures'
 
 export {
   Navbar,
@@ -28,4 +29,5 @@ export {
   HomePageCrowdSourcing,
   HomePageMachineLearning,
   HomePageDataProvider,
+  HomePageFeatures,
 }

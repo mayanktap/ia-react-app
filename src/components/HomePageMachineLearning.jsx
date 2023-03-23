@@ -19,7 +19,7 @@ const HomePageMachineLearning = () => {
             <h3 className="text-xl font-bold mb-4">Use Cases</h3>
             <p className="mb-4">We provides actionable intelligence by gathering, processing and distributing UAS sensor and visual data.</p>
             <ul className="list-disc ml-4 mb-4">
-              <li>For environmental purposes, air or water quality monitoring, and landfill and waste management surveys can be conducted.</li>
+              <li>Environmental purposes, air or water quality monitoring, and landfill and waste management surveys can be conducted.</li>
               <li>In weather, data can be gathered in inhospitable or extreme locations.</li>
               <li>In agriculture, drones can be used to study irrigation systems, yield quantity, and soil analysis.</li>
               <li>In fire risk assessment, adjustor assistance, and post-damage assessment, drones can play an important role.</li>

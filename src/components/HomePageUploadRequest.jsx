@@ -3,12 +3,11 @@ const HomePageUploadRequest = () => (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center">
         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-          Empowering Informed 
+          Hyper-Local Data Applications 
           <br />
-          Decision-Making Globally
         </h2>
         <p className="mt-4 text-lg text-gray-500">
-          Our mission is to provide actionable intelligence on a global scale. This empowers informed decision-making for governement, federal, and commercial clients around the world.
+        Our mission is to provide actionable intelligence tailored to the unique needs of your region and use case.
         </p>
       </div>
       <div className="mt-16 flex justify-center">

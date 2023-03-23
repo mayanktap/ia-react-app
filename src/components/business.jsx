@@ -1,7 +1,9 @@
 import {
   BusinessStart,
   ThumbnailSlider,
-} from '../pages/business/Index';
+  ProductLists,
+  ProductFeatures,
+} from '../pages/business';
 
 const Business = () =>  (
   <section>
@@ -11,7 +13,12 @@ const Business = () =>  (
     <div>
       <ThumbnailSlider />
     </div>
-
+    <div>
+      <ProductLists />
+    </div>
+    <div>
+      <ProductFeatures />
+    </div>
   </section>
 );
 

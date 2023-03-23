@@ -22,26 +22,29 @@ const Information = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            SkyTL In The News
+            <span className="text-gradient">SkyTL </span>
+            <span className="text-gradient">In </span>
+            <span className="text-gradient">The </span>
+            <span className="text-gradient">News</span>   
           </h2>
-          <p className="text-lg text-gray-400">
-            Check out the latest news and coverage of SkyTL.
+          <p className="text-lg text-white">
+            Check out our latest news.
           </p>
         </div>
         <div className="mt-12">
           {articles.map((article, index) => (
             <div
               key={index}
-              className="text-3xl font-bold tracking-tight border border-gray-400 rounded-lg shadow dark:bg-white mb-6 py-[10px] py-6 hover:bg-gradient-to-r hover:from-gray-200 hover:to-gray-100"
+              className="bg-gray-800 text-3xl font-bold tracking-tight border border-gray-400 rounded-lg shadow dark:bg-white mb-6 py-[10px] py-6 hover:bg-gradient-to-r hover:from-blue-500 hover:to-pink-500"
             >
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-200 mb-2">
                 {article.source}
               </h3>
               <a
                 href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-medium text-blue-600 hover:underline"
+                className="text-lg font-medium text-gray-200 hover:underline"
               >
                 {article.title}
               </a>
@@ -54,9 +57,9 @@ const Information = () => {
           </p>
           <a
             href="mailto:info@skytl.com"
-            className="text-lg font-medium text-blue-600 hover:underline"
+            className="text-lg font-medium text-orange-500 hover:underline"
           >
-            press@scale.com
+            info@skytlcloud.com
           </a>
         </div>
       </div>

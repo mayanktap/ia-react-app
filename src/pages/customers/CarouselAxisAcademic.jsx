@@ -48,7 +48,7 @@ export default function CarouselAxisAcademic() {
   )
 
   return (
-    <div className="bg-black container mx-auto py-10 pb-20">
+    <div className='bg-none container mx-auto py-10 pb-20'>
       <div className="mx-auto">
         <h1 className="text-3xl font-bold text-white pb-20">Academic Partners</h1>
         <div className="wrapper">
