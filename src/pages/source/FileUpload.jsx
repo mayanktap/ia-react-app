@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Storage, API } from 'aws-amplify';
+import { Storage, API, Auth } from 'aws-amplify';
 
 const FileUpload = () => {
   const [selectedTag, setSelectedTag] = useState('Select a tag');
@@ -66,15 +66,19 @@ const FileUpload = () => {
     setDescription(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log(`Selected tag: ${selectedTag}`);
     console.log(`Description: ${description}`);
+    let user = await Auth.currentAuthenticatedUser();
 
     API.post('useruploadedmediainfo', '/media-info', {
       body: {
         description: description,
         selectedTag: selectedTag,
         mediaFile: state.key,
+      },
+      headers: {
+        Authorization: user.signInUserSession.idToken.jwtToken,
       },
     }).then(response => {
       console.log(response);

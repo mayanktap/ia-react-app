@@ -50,7 +50,11 @@
         },
         "mediaInformationHandler": {
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
-          "s3Key": "amplify-builds/mediaInformationHandler-6b664638303462703568-build.zip"
+          "s3Key": "amplify-builds/mediaInformationHandler-7a61386b557653776446-build.zip"
+        },
+        "productEnquiryFn": {
+          "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
+          "s3Key": "amplify-builds/productEnquiryFn-4c466c55334f454b6767-build.zip"
         }
       },
       "geo": {

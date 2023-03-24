@@ -55,25 +55,17 @@ class MediaInfo {
   }
 
   get username() {
-    const regex = /[a-z,A-Z,0-9,-]+(?![^:]*:)/g;
-    const match = regex.exec(
-      this.evt['requestContext']['identity']['cognitoAuthenticationProvider']
-    )[0].toString();
-
+    const match = this.evt['requestContext']['authorizer']['claims']['cognito:username'].split('/').slice(-1);
     console.log('Here is the username: ', match);
 
-    return match;
+    return match[0];
   }
 
   get userPoolId() {
-    const regex = /[^[/]+(?=,)/g;
-    const match = regex.exec(
-      this.evt['requestContext']['identity']['cognitoAuthenticationProvider']
-    )[0].toString();
-
+    const match = this.evt['requestContext']['authorizer']['claims']['iss'].split('/').slice(-1);
     console.log('Here is the user pool id: ', match);
 
-    return match;
+    return match[0];
   }
 
   async userFromCognito() {

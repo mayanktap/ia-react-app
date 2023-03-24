@@ -71,7 +71,7 @@ const products = [
     price: '$35',
     color: 'Black',
   },
-  ]
+]
   
 export default function ProductLists() {
   return (
@@ -107,4 +107,4 @@ export default function ProductLists() {
       </div>
     </div>
   )
-};
+}
