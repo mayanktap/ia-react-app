@@ -29,6 +29,10 @@ exports.handler = async (event) => {
     console.log(`Error in the response of lambda: ${err}`);
     return {
       statusCode: 403,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+      },
       body: 'Request was unsuccessful',
     };
   }

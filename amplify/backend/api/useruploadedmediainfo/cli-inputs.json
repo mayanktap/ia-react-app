@@ -13,6 +13,19 @@
           "delete"
         ]
       }
+    },
+    "/product-enquiry": {
+      "name": "/product-enquiry",
+      "lambdaFunction": "productEnquiryFn",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

@@ -40,6 +40,14 @@
           ],
           "category": "function",
           "resourceName": "mediaInformationHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "productEnquiryFn"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -97,6 +105,11 @@
       "service": "Lambda"
     },
     "mediaInformationHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "productEnquiryFn": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -172,6 +185,22 @@
         {
           "category": "function",
           "resourceName": "mediaInformationHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_productEnquiryFn_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productEnquiryFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_productEnquiryFn_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productEnquiryFn"
         }
       ]
     }
