@@ -94,6 +94,7 @@ const FileUpload = () => {
       setPostErrorMessage('Relevant Data failed to get created.');
     });
   };
+
   return (
     <div className='flex flex-col gap-4 py-10'>
       <div className='flex flex-col gap-1'>

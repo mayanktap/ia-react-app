@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import CheckBox from './CheckBox'
+import { API, Auth } from 'aws-amplify';
 
 function SalesForm() {
-  const [formData, setFormData] = useState({
+  const formInitialData = {
     firstName: '',
     lastName: '',
     email: '',
@@ -11,7 +12,16 @@ function SalesForm() {
     industry: '',
     jobTitle: '',
     describe: '',
-  });
+    helpWithImagery: false,
+    dataAnnotation: false,
+    dataManagement: false,
+    llmDeployment: false,
+    modelEvaluation: false,
+    agreeToTerms: false,
+  };
+  const [postSuccessMessage, setPostSuccessMessage] = useState('');
+  const [postErrorMessage, setPostErrorMessage] = useState('');
+  const [formData, setFormData] = useState(formInitialData);
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -24,9 +34,31 @@ function SalesForm() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleChildInputChange = (name, value) => {
+    formData[name] = value;
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // TODO: Submit the form data to your backend or API
+
+    let user = await Auth.currentAuthenticatedUser();
+    API.post('useruploadedmediainfo', '/product-enquiry', {
+      body: {
+        productData: formData,
+      },
+      headers: {
+        Authorization: user.signInUserSession.idToken.jwtToken,
+      },
+    }).then(response => {
+      console.log(response);
+      if (response === 'Record Successfully created') {
+        setFormData(formInitialData);
+        setPostSuccessMessage('Relevant Data is successfully created.');
+      }
+    }).catch(err => {
+      console.log(err);
+      setPostErrorMessage('Relevant Data failed to get created.');
+    });
   };
 
   return (
@@ -156,24 +188,36 @@ function SalesForm() {
           </div>
 
           <div>
-            <CheckBox />
+            <CheckBox handleChildInputChange={handleChildInputChange} />
           </div>
 
           <div className="mt-8">
             <button
               className="text-white 
-            text-extrabold
-            bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
-            hover:bg-gradient-to-br
-            focus:ring-4 focus:outline-none focus:ring-teal-300
-            dark:focus:ring-teal-800
-            font-medium rounded-lg text-sm
-            px-5 py-2.5
-            text-center"
+                text-extrabold
+                bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
+                hover:bg-gradient-to-br
+                focus:ring-4 focus:outline-none focus:ring-teal-300
+                dark:focus:ring-teal-800
+                font-medium rounded-lg text-sm
+                px-5 py-2.5
+                text-center"
               type="submit"
             >
             Submit
             </button>
+            {
+              !!postSuccessMessage &&
+              <div className='text-white'>
+                {postSuccessMessage}
+              </div>
+            }
+            {
+              !!postErrorMessage &&
+              <div className='text-red'>
+                {postErrorMessage}
+              </div>
+            }
           </div>
         </form>
       </div>
