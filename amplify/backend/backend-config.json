@@ -111,6 +111,24 @@
     },
     "productEnquiryFn": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyauthappa0143ccf"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "usermediametadata"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -189,6 +207,14 @@
       ]
     },
     "AMPLIFY_function_productEnquiryFn_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productEnquiryFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_productEnquiryFn_dynamoname": {
       "usedBy": [
         {
           "category": "function",

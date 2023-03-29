@@ -1,3 +1,27 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "dynamoname",
+      "environmentVariableName": "dynamoname"
+    }
+  ],
+  "permissions": {
+    "auth": {
+      "amplifyauthappa0143ccf": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "usermediametadata": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
 }
