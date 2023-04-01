@@ -23,14 +23,12 @@ function SalesForm() {
   const [postErrorMessage, setPostErrorMessage] = useState('');
   const [formData, setFormData] = useState(formInitialData);
 
-  const handleInputChange = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+  const handleInputChange = (evt) => {
+    const target = evt.target;
 
     setFormData({
       ...formData,
-      [name]: value,
+      [target.name]: target.type === 'checkbox' ? target.checked : target.value,
     });
   };
 
@@ -42,10 +40,9 @@ function SalesForm() {
     event.preventDefault();
 
     let user = await Auth.currentAuthenticatedUser();
+
     API.post('useruploadedmediainfo', '/product-enquiry', {
-      body: {
-        productData: formData,
-      },
+      body: { productData: formData },
       headers: {
         Authorization: user.signInUserSession.idToken.jwtToken,
       },
@@ -53,6 +50,7 @@ function SalesForm() {
       console.log(response);
       if (response === 'Record Successfully created') {
         setFormData(formInitialData);
+        document.dispatchEvent(new Event('resetCheckbox'));
         setPostSuccessMessage('Relevant Data is successfully created.');
       }
     }).catch(err => {
@@ -70,9 +68,8 @@ function SalesForm() {
             <div>
               <label
                 className='block text-gray-700 font-bold mb-2'
-                htmlFor="firstName"
-              >
-              First Name
+                htmlFor="firstName">
+                First Name
               </label>
               <input
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -86,9 +83,8 @@ function SalesForm() {
             <div>
               <label
                 className="block text-gray-700 font-bold mb-2"
-                htmlFor="lastName"
-              >
-              Last Name
+                htmlFor="lastName">
+                Last Name
               </label>
               <input
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -105,9 +101,8 @@ function SalesForm() {
             <div>
               <label
                 className="block text-gray-700 font-bold mb-2"
-                htmlFor="email"
-              >
-              Email
+                htmlFor="email">
+                Email
               </label>
               <input
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -121,9 +116,8 @@ function SalesForm() {
             <div>
               <label
                 className="block text-gray-700 font-bold mb-2"
-                htmlFor="phone"
-              >
-              Phone
+                htmlFor="phone">
+                Phone
               </label>
               <input
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -139,9 +133,8 @@ function SalesForm() {
           <div className="mt-4">
             <label
               className="block text-gray-700 font-bold mb-2"
-              htmlFor="industry"
-            >
-            Industry
+              htmlFor="industry">
+              Industry
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -156,9 +149,8 @@ function SalesForm() {
           <div className="mt-4">
             <label
               className="block text-gray-700 font-bold mb-2"
-              htmlFor="jobTitle"
-            >
-            Job Title
+              htmlFor="jobTitle">
+              Job Title
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -173,9 +165,8 @@ function SalesForm() {
           <div className="mt-4">
             <label
               className="block text-gray-700 font-bold mb-2"
-              htmlFor="describe"
-            >
-            Please Describe Your Use Case or Request*
+              htmlFor="describe">
+              Please Describe Your Use Case or Request*
             </label>
             <textarea
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -183,8 +174,7 @@ function SalesForm() {
               rows="5"
               value={formData.describe}
               onChange={handleInputChange}
-              required
-            />
+              required />
           </div>
 
           <div>

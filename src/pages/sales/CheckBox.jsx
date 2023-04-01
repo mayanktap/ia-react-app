@@ -7,13 +7,18 @@ CheckBox.propTypes = {
 };
 
 function CheckBox(props) {
-  const [formData, setFormData] = useState({
+  const formInitialData = {
     helpWithImagery: false,
     dataAnnotation: false,
     dataManagement: false,
     llmDeployment: false,
     modelEvaluation: false,
     agreeToTerms: false,
+  };
+  const [formData, setFormData] = useState(formInitialData);
+
+  document.addEventListener('resetCheckbox', () => {
+    setFormData(formInitialData);
   });
 
   const handleInputChange = (event) => {
@@ -111,4 +116,4 @@ function CheckBox(props) {
   );
 }
 
-export default CheckBox; 
+export default CheckBox;
