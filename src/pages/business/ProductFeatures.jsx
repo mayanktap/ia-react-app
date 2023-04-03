@@ -5,7 +5,7 @@ const features = [
   { name: 'Finish', description: 'Hand sanded and finished with natural oil' },
   { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
   { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
-]
+];
   
 export default function ProductFeatures() {
   return (
@@ -50,5 +50,5 @@ export default function ProductFeatures() {
         </div>
       </div>
     </div>
-  )
+  );
 }

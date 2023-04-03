@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CheckBox from './CheckBox'
+import CheckBox from './CheckBox';
 import { API, Auth } from 'aws-amplify';
 
 function SalesForm() {

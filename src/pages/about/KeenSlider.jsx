@@ -6,7 +6,7 @@ import {
   nasalogo,
 } from '../../assets/index';
 
-const animation = { duration: 20000, easing: (t) => t }
+const animation = { duration: 20000, easing: (t) => t };
 
 export default function KeenSlider() {
   const [sliderRef] = useKeenSlider({
@@ -14,15 +14,15 @@ export default function KeenSlider() {
     renderMode: 'performance',
     drag: false,
     created(s) {
-      s.moveToIdx(5, true, animation)
+      s.moveToIdx(5, true, animation);
     },
     updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
     animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
-  })
+  });
   return (
     <div ref={sliderRef} className="keen-slider">
       <div className="keen-slider__slide number-slide1 p-2">
@@ -62,5 +62,5 @@ export default function KeenSlider() {
         </div>
       </div>
     </div>
-  )
+  );
 }

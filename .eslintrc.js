@@ -20,20 +20,21 @@ module.exports = {
 		'react/jsx-uses-react': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'quotes': [2, 'single', { 'avoidEscape': true }],
+		'semi': [2, 'always'],
 		'indent': [
-      'error', 2, {
-        'CallExpression': { 'arguments': 1 },
-      },
-    ],
+			'error', 2, {
+				'CallExpression': { 'arguments': 1 },
+			},
+    	],
 		'comma-dangle': [
-      'error',
-      {
-        'arrays': 'always-multiline',
-        'objects': 'always-multiline',
-        'imports': 'always-multiline',
-        'exports': 'always-multiline',
-        'functions': 'never',
-      },
-    ],
+			'error',
+			{
+				'arrays': 'always-multiline',
+				'objects': 'always-multiline',
+				'imports': 'always-multiline',
+				'exports': 'always-multiline',
+				'functions': 'never',
+			},
+		],
 	}
 }

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { navLinks } from '../constants'
+import { useState } from 'react';
+import { navLinks } from '../constants';
 import { menublack, skytllogo, close } from '../assets';
 import { useNavigate } from 'react-router-dom';
 
