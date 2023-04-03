@@ -1,6 +1,6 @@
-import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
-import './styles.css'
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import './styles.css';
 import {
   //nasalogo,
   //noaalogo, 
@@ -21,20 +21,19 @@ import {
 } from '../../assets/index';
 
 const carousel = (slider) => {
-  const z = 300
   function rotate() {
-    const deg = 360 * slider.track.details.progress
-    slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
+    const deg = 360 * slider.track.details.progress;
+    slider.container.style.transform = `translateZ(-${300}px) rotateY(${-deg}deg)`;
   }
   slider.on('created', () => {
-    const deg = 360 / slider.slides.length
+    const deg = 360 / slider.slides.length;
     slider.slides.forEach((element, idx) => {
-      element.style.transform = `rotateY(${deg * idx}deg) translateZ(${z}px)`
-    })
-    rotate()
-  })
-  slider.on('detailsChanged', rotate)
-}
+      element.style.transform = `rotateY(${deg * idx}deg) translateZ(${300}px)`;
+    });
+    rotate();
+  });
+  slider.on('detailsChanged', rotate);
+};
 
 export default function CarouselAxisAcademic() {
   const [sliderRef] = useKeenSlider(
@@ -45,7 +44,7 @@ export default function CarouselAxisAcademic() {
       mode: 'free-snap',
     },
     [carousel]
-  )
+  );
 
   return (
     <div className='bg-none container mx-auto py-10 pb-20'>
@@ -68,5 +67,5 @@ export default function CarouselAxisAcademic() {
         </div>
       </div>
     </div>
-  )
+  );
 }

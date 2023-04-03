@@ -7,7 +7,7 @@ import {
   HomePageCrowdSourcing,
   HomePageFeatures,
   HomePageDataProvider,
-} from './'
+} from './';
 
 const Hero = () => {
   return (

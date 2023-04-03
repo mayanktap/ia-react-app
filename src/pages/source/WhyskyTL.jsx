@@ -29,6 +29,6 @@ const WhySkyTL = () => {
       </div>
     </div>
   );
-}
+};
 
 export default WhySkyTL;

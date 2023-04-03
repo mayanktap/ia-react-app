@@ -3,7 +3,7 @@ import {
   pollution,
   crane,
   wildfire_close,
-} from '../assets/index'
+} from '../assets/index';
 
 const features = [
   { name: 'Wildfire Mitigation', description: 'Provide real-time data on wildfires for better decision-making and resource deployment.' },
@@ -12,7 +12,7 @@ const features = [
   { name: 'Agriculture', description: 'Revolutionize farming by providing valuable insights on crops, soil health, and irrigation systems.' },
   { name: 'Air Quality', description: 'Monitor precise pollution data for targeted control, public health management, and urban planning decisions.' },
   { name: 'Project Mangement', description: 'Facilitate improved situational awareness, facilitate progress tracking, and enhance communication among team members.' },
-]
+];
     
 export default function HomePageFeatures() {
   return (
@@ -59,5 +59,5 @@ export default function HomePageFeatures() {
         </div>
       </div>
     </div>
-  ) 
+  ); 
 }

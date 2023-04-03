@@ -56,7 +56,7 @@ const FileUpload = () => {
     if(state) {
       handleShowMedia(state.key);
     }
-  }, [state])
+  }, [state]);
 
   const handleTagChange = (event) => {
     setSelectedTag(event.target.value);
