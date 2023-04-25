@@ -17,6 +17,7 @@ import {
 } from './components';
 import UploadMedia from './pages/upload_media/UploadMedia';
 import GeoMap from './pages/geo_map/GeoMap';
+import HeatMap from './pages/geo_map/HeatMap';
 import { Routes, Route } from 'react-router-dom';
 
 Amplify.configure(awsExports);
@@ -40,6 +41,7 @@ const App = ({ signOut, user }) => {
               <Route path="/cta" element={<CTA />} />
               <Route path="/upload_media" element={<UploadMedia />} />
               <Route path="/geo_map" element={<GeoMap />} />
+              <Route path="/heat_map" element={<HeatMap />} />
             </Routes>
             <Footer />
           </div>

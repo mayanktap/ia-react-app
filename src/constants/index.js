@@ -31,6 +31,10 @@ export const navLinks = [
     id: 'geo_map',
     title: 'GeoMap',
   },
+  {
+    id: 'heat_map',
+    title: 'HeatMap',
+  },
 ];
 
 export const features = [
