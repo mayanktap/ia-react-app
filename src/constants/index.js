@@ -28,12 +28,8 @@ export const navLinks = [
     title: 'CTA',
   },
   {
-    id: 'geo_map',
-    title: 'GeoMap',
-  },
-  {
-    id: 'heat_map',
-    title: 'HeatMap',
+    id: 'platform',
+    title: 'Platform',
   },
 ];
 

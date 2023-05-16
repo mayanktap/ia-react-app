@@ -13,6 +13,7 @@ import HomePageCrowdSourcing from './HomePageCrowdSourcing';
 import HomePageMachineLearning from './HomePageMachineLearning';
 import HomePageDataProvider from './HomePageDataProvider';
 import HomePageFeatures from './HomePageFeatures';
+import Platform from './Platform';
 
 export {
   Navbar,
@@ -30,4 +31,5 @@ export {
   HomePageMachineLearning,
   HomePageDataProvider,
   HomePageFeatures,
+  Platform,
 };

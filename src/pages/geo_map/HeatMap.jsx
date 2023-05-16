@@ -53,8 +53,8 @@ function HeatMap() {
 
   return (
     <div className='container'>
-      <div>
-        <select value={value} onChange={handleChange}>
+      <div className='select-wrapper'>
+        <select className='heat-map-select' value={value} onChange={handleChange}>
           {options.map((option) => (
             <option value={option.value} key={option.id}>{option.label}</option>
           ))}

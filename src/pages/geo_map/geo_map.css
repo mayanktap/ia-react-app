@@ -2,3 +2,16 @@
   height: 120vh;
   margin: auto;
 }
+
+.select-wrapper {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.heat-map-select {
+  width: 15%;
+  height: 35px;
+  border: none;
+  background: darkcyan;
+  color: white;
+}
