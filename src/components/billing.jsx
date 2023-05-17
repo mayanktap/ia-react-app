@@ -13,7 +13,7 @@ const Billing = () => (
         <SalesHero />
         <SalesForm />
       </div>
-      <div className="w-full lg:w-auto">
+      <div className='w-full lg:w-auto'>
         <div className="flex flex-col justify-center items-center">
           <Testimonial />
           <TestimonialFAA />
