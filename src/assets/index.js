@@ -33,6 +33,10 @@ import pollution from './pollution.jpg';
 import crane from './crane.jpg';
 import wildfire_close from './wildfire_close.jpg';
 import water_quality from './water_quality.jpg';
+import lidar_of_london from './Lidar_3D_Model_of_London.jpg';
+import wildfire_forest_blaze from './wildfire_forest_blaze.jpg';
+import drone_6021114_1280 from './drone_6021114_1280.jpg';
+import Red_flag_Sleeper from './Red_flag_Sleeper.jpg';
 
 export {
   menublack,
@@ -62,12 +66,16 @@ export {
   WildfireDefense,
   FSU,
   awsicon,
+  drone_6021114_1280,
   wildfiremp4,
   agriculturemp4,
+  wildfire_forest_blaze,
+  Red_flag_Sleeper,
   wildfire_up_close,
   agriculture_drone,
   pollution,
   crane,
   wildfire_close,
   water_quality,
+  lidar_of_london,
 };

@@ -8,12 +8,14 @@ import CTA from './CTA';
 import Testimonials from './Testimonials';
 import Stats from './stats';
 import Footer from './Footer';
-import HomePageUploadRequest from './HomePageUploadRequest';
 import HomePageCrowdSourcing from './HomePageCrowdSourcing';
 import HomePageMachineLearning from './HomePageMachineLearning';
 import HomePageDataProvider from './HomePageDataProvider';
 import HomePageFeatures from './HomePageFeatures';
 import Platform from './Platform';
+import HyperLocalData from './HyperLocal';
+import HomeSlider from './HomePageSlider';
+import HomePageUploadRequest from './HomePageUploadRequest';
 
 export {
   Navbar,
@@ -26,10 +28,12 @@ export {
   Stats,
   CTA,
   Footer,
-  HomePageUploadRequest,
   HomePageCrowdSourcing,
   HomePageMachineLearning,
   HomePageDataProvider,
   HomePageFeatures,
   Platform,
+  HyperLocalData,
+  HomeSlider,
+  HomePageUploadRequest,
 };
