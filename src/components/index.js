@@ -16,6 +16,7 @@ import Platform from './Platform';
 import HyperLocalData from './HyperLocal';
 import HomeSlider from './HomePageSlider';
 import HomePageUploadRequest from './HomePageUploadRequest';
+import HomePageCustomer from  './HomePageCustomer';
 
 export {
   Navbar,
@@ -35,5 +36,6 @@ export {
   Platform,
   HyperLocalData,
   HomeSlider,
+  HomePageCustomer,
   HomePageUploadRequest,
 };

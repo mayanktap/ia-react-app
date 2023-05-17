@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
 import { useEffect, useState, React } from 'react';
-import {Billing, Business, CardDeal, Clients, CTA, Footer, Hero, Navbar, Stats, Testimonials} from './components'
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Hero, Navbar, Stats, Testimonials } from './components';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 Amplify.configure(awsExports);
 
@@ -23,11 +23,11 @@ function App({ signOut, user }) {
       
     });
     setFileStatus(true);
-    console.log(21, result)
+    console.log(21, result);
   };
 
   async function ListObjectsFromS3() {
-    const s3Objects = await Storage.list("");
+    const s3Objects = await Storage.list('');
     s3Objects.map(async (item) => {
       console.log(30, item);
       let downloadLink = await generateDownloadLinks(item.key);
@@ -40,22 +40,22 @@ function App({ signOut, user }) {
 
   async function generateDownloadLinks(fileKey) {
     const result = await Storage.get(fileKey, { download: true });
-    return downloadBlob(result.Body, "filename");
+    return downloadBlob(result.Body, 'filename');
   }
   
   async function downloadBlob(blob, filename) {
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     a.href = url;
     return a;
   }
 
   useEffect(() => {
     async function createTodoItem() {
-      const todo = { name: "My second todo", description: "Hello world!" };
+      const todo = { name: 'My second todo', description: 'Hello world!' };
 
       /* create a todo */
-      await API.graphql(graphqlOperation(createTodo, {input: todo}));
+      await API.graphql(graphqlOperation(createTodo, { input: todo }));
     }
  
     async function ListTodoItems() {
@@ -66,7 +66,7 @@ function App({ signOut, user }) {
     ListObjectsFromS3(); 
     ListTodoItems();
     createTodoItem();
-   }, []);
+  }, []);
 
   return (
     
@@ -93,24 +93,24 @@ function App({ signOut, user }) {
       <div>
         <h1 className='container mx-auto bg-gray-200 rounded-xl'>
             Hello {user.username}
-          </h1>
-          <button onClick={signOut}>Sign out</button>
-          <div>
-            <input type="file" onChange={(e) => setFileData(e.target.files[0])} />
-          </div>
-          <div>
-            <button onClick={uploadFile}>Upload file</button>
-          </div>
-          <div>{fileStatus ? 'File uploaded successfully' : ''}</div>
+        </h1>
+        <button onClick={signOut}>Sign out</button>
+        <div>
+          <input type="file" onChange={(e) => setFileData(e.target.files[0])} />
+        </div>
+        <div>
+          <button onClick={uploadFile}>Upload file</button>
+        </div>
+        <div>{fileStatus ? 'File uploaded successfully' : ''}</div>
 
-          <div>{/* List all s3 objects and download by clicking on the link */}</div>
-          {s3DownloadLinks.map((item, index) => (
-            <div key={index}>
-              <a href={item} target="_blank" download="">
+        <div>{/* List all s3 objects and download by clicking on the link */}</div>
+        {s3DownloadLinks.map((item, index) => (
+          <div key={index}>
+            <a href={item} target="_blank" download="" rel="noreferrer">
                 Link {index}
-              </a>
-            </div>
-          ))} 
+            </a>
+          </div>
+        ))} 
       </div>
     </div>
   );
