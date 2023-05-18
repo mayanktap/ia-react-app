@@ -828,8 +828,8 @@ video {
   height: 23px;
 }
 
-.h-full {
-  height: 100%;
+.h-3\/4 {
+  height: 75%;
 }
 
 .h-\[64px\] {
@@ -838,6 +838,10 @@ video {
 
 .h-\[50\%\] {
   height: 50%;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-\[105px\] {
@@ -916,8 +920,8 @@ video {
   width: 23px;
 }
 
-.w-10\/12 {
-  width: 83.333333%;
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-\[64px\] {

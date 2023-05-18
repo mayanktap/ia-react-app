@@ -17,6 +17,7 @@ import HyperLocalData from './HyperLocal';
 import HomeSlider from './HomePageSlider';
 import HomePageUploadRequest from './HomePageUploadRequest';
 import HomePageCustomer from  './HomePageCustomer';
+import IndustryApplication from './IndustryApplications'; 
 
 export {
   Navbar,
@@ -34,6 +35,7 @@ export {
   HomePageDataProvider,
   HomePageFeatures,
   Platform,
+  IndustryApplication,
   HyperLocalData,
   HomeSlider,
   HomePageCustomer,
