@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Amplify } from 'aws-amplify';
-import { withAuthenticator } from '@aws-amplify/ui-react';
+// import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
@@ -21,7 +21,7 @@ import { Routes, Route } from 'react-router-dom';
 
 Amplify.configure(awsExports);
 
-const App = ({ signOut, user }) => {
+const App = () => {
   return (
     <>
       <div className='bg-primary w-full overflow-hidden'>
@@ -44,14 +44,6 @@ const App = ({ signOut, user }) => {
             <Footer />
           </div>
         </div>
-        <div>
-          <div className='bg-white'>
-          </div>
-          <h1 className='container mx-auto bg-gray-200'>
-            Hello {user.username}
-          </h1>
-          <button className='text-dimWhite' onClick={signOut}>Sign out</button>
-        </div>
       </div>
     </>
   );
@@ -62,4 +54,4 @@ App.propTypes = {
   user: PropTypes.object,
 };
 
-export default withAuthenticator(App);
+export default App;
