@@ -4,32 +4,20 @@ export const navLinks = [
     title: 'Home',
   },
   {
-    id: 'features',
-    title: 'Features',
-  },
-  {
-    id: 'product',
-    title: 'Product',
-  },
-  {
-    id: 'carddeal',
-    title: 'Carddeal',
-  },
-  {
-    id: 'clients',
-    title: 'Clients',
-  },
-  {
-    id: 'testimonials',
-    title: 'Testimonials',
-  },
-  {
-    id: 'cta',
-    title: 'CTA',
+    id: 'industries',
+    title: 'Industries',
   },
   {
     id: 'platform',
     title: 'Platform',
+  },
+  {
+    id: 'uas-operators',
+    title: 'UAS Operators',
+  },
+  {
+    id: 'about',
+    title: 'About Us',
   },
 ];
 
