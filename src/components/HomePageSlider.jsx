@@ -10,12 +10,12 @@ const HomeSlider = () => {
     },
     {
       image: drone_6021114_1280,
-      heading: 'Teaming of Manned and Unmanned Multi-Aircraft Missions Made Possible​',
+      heading: 'Teaming of Manned and Unmanned Multi-Aircraft Missions Made Possible​', 
       paragraph: 'The DoD is looking for new ways to deploy robotic platforms for intelligence, surveillance and reconnaissance (ISR) and other missions, however, for aerial robotic platforms, the lack of domain awareness has become an issue. Airspace management of unmanned operations is not currently integrated with manned or ground operations.​ Through SkyTL, we are supporting the Air Force to enable aerial manned-unmanned teaming operations using dynamic airspace deconfliction algorithms.​',
     },
     {
       image: Red_flag_Sleeper,
-      heading: 'Early-detection water quality monitoring system from crowdsourced UAS data​',
+      heading: 'Early-detection water quality monitoring system from crowdsourced UAS data collection​',
       paragraph: 'Red tide outbreaks in Florida have become more frequent and severe, leading to concerns about the long-term health of marine ecosystems and the local economy, and North Carolina has started to see unprecedented red tide outbreaks. Unmanned Aircraft Systems (UAS) offer an opportunity to integrate low-cost sensors in rapidly deployable, highly flexible, and multi-purpose platforms, allowing data collection over different areas. Using UAS data combined with artificial intelligence processes and analysis tools, SkyTL can generate heatmaps of red tide and turbidity estimates that are available to municipalities and general users.​',
     },
   ];
