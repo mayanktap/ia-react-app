@@ -1,11 +1,10 @@
 import { lidar_of_london } from '../assets';
 import { 
   Stats, 
-  HomePageCrowdSourcing,
-  HomePageFeatures,
-  HomePageDataProvider,
+  HomePageCustomer,
   HyperLocalData,
   HomeSlider,
+  HomePageMachineLearning,
 } from './';
 
 const Hero = () => {
@@ -16,7 +15,7 @@ const Hero = () => {
           <div className="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-opacity-80">
             <div className="text-white px-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-4">
-                Actionable<br className="sm:block hidden" />
+                Actionable <br className="sm:block hidden" />
                 <span className="text-gradient">Geospatial Intelligence</span>
               </h1>
               <h1 className="text-3xl md:text-5xl lg:text-6xl uppercase mb-4">
@@ -36,12 +35,11 @@ const Hero = () => {
         </div>
       </section>
       <Stats />
-      <HomePageCrowdSourcing />
+      <HomePageMachineLearning />
       <div className="slider-container">
         <HomeSlider />
       </div>
-      <HomePageFeatures />
-      <HomePageDataProvider />
+      <HomePageCustomer />
     </div>
   );
 };

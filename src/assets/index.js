@@ -37,6 +37,7 @@ import lidar_of_london from './Lidar_3D_Model_of_London.jpg';
 import wildfire_forest_blaze from './wildfire_forest_blaze.jpg';
 import drone_6021114_1280 from './drone_6021114_1280.jpg';
 import Red_flag_Sleeper from './Red_flag_Sleeper.jpg';
+import us_air_force from './us_air_force.png';
 
 export {
   menublack,
@@ -75,6 +76,7 @@ export {
   agriculture_drone,
   pollution,
   crane,
+  us_air_force,
   wildfire_close,
   water_quality,
   lidar_of_london,
