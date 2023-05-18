@@ -7,11 +7,11 @@ import {
   
 const features = [
   { name: 'Wildfire Mitigation', description: 'Provide real-time data on wildfires for better decision-making and resource deployment.' },
-  { name: 'Emergency Response', description: 'Transform emergency response with rapid information and supply delivery.' },
-  { name: 'Water Quality', description: 'Equipping UAS with water quality sensors, hyper-local data on water quality can be obtained, enhancing environmental monitoring and management.' },
+  { name: 'Emergency Response', description: 'Transform emergency response with information unique to your municipality​.' },
+  { name: 'Water Quality', description: 'Crowdsourced UAS data for early-detection of water quality issues​.' },
   { name: 'Agriculture', description: 'Revolutionize farming by providing valuable insights on crops, soil health, and irrigation systems.' },
-  { name: 'Air Quality', description: 'Monitor precise pollution data for targeted control, public health management, and urban planning decisions.' },
-  { name: 'Project Mangement', description: 'Facilitate improved situational awareness, facilitate progress tracking, and enhance communication among team members.' },
+  { name: 'Advanced Air Mobility', description: 'Real-time dynamic airspace management and awareness of concurrent manned and unmanned aircraft operations​.' },
+  { name: 'Enterprise Data Management​', description: 'Video processing automation, standardization of database management and storage, and generation of semi-automated reports​.' },
 ];
       
 export default function IndustryApplication() {
@@ -24,7 +24,7 @@ export default function IndustryApplication() {
             <span className="text-gradient">Applications</span>
           </h2> 
           <p className="mt-4 text-white">
-                We provide the platform and resources to collect, analyze, and make predictions for hyper-local applications with data collected by UAS.
+                We provide actionable information for hyper-local applications leveraging data collected by UAS, ground sensors, lidars, and satellites.
           </p>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             {features.map((feature) => (

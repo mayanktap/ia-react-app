@@ -38,6 +38,11 @@ import wildfire_forest_blaze from './wildfire_forest_blaze.jpg';
 import drone_6021114_1280 from './drone_6021114_1280.jpg';
 import Red_flag_Sleeper from './Red_flag_Sleeper.jpg';
 import us_air_force from './us_air_force.png';
+import fire from './fire.jpg';
+import F22 from './F22.jpg';
+import teaming_aircraft from './teaming_aircraft.jpg';
+import wildfire_wui from './wildfire_wui.jpg';
+import water_pollution from './Water-pollution.jpg';
 
 export {
   menublack,
@@ -61,7 +66,12 @@ export {
   InsuranceInstitute,
   StruWeather,
   TampaBayWave,
+  F22,
+  teaming_aircraft,
   TBTI,
+  wildfire_wui,
+  water_pollution,
+  fire,
   VentureLab,
   SkytlLogoBlack,
   WildfireDefense,

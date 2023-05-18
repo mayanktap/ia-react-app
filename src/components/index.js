@@ -18,6 +18,8 @@ import HomeSlider from './HomePageSlider';
 import HomePageUploadRequest from './HomePageUploadRequest';
 import HomePageCustomer from  './HomePageCustomer';
 import IndustryApplication from './IndustryApplications'; 
+import IndustryUseCases from './IndustryUseCases';
+import PlatformInside from './PlatformInside';
 
 export {
   Navbar,
@@ -36,6 +38,8 @@ export {
   HomePageFeatures,
   Platform,
   IndustryApplication,
+  PlatformInside,
+  IndustryUseCases,
   HyperLocalData,
   HomeSlider,
   HomePageCustomer,

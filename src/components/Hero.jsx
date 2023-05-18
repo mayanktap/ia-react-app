@@ -5,6 +5,9 @@ import {
   HyperLocalData,
   HomeSlider,
   HomePageMachineLearning,
+  IndustryApplication,
+  IndustryUseCases,
+  PlatformInside,
 } from './';
 
 const Hero = () => {
@@ -40,6 +43,13 @@ const Hero = () => {
         <HomeSlider />
       </div>
       <HomePageCustomer />
+      <div>
+        <IndustryApplication />
+        <IndustryUseCases />
+      </div>
+      <div>
+        <PlatformInside />
+      </div>
     </div>
   );
 };
