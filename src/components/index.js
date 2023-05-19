@@ -21,6 +21,7 @@ import IndustryApplication from './IndustryApplications';
 import IndustryUseCases from './IndustryUseCases';
 import PlatformInside from './PlatformInside';
 import Login from './Login';
+import AboutPage from './AboutPage';
 
 export {
   Navbar,
@@ -46,4 +47,5 @@ export {
   HomePageCustomer,
   HomePageUploadRequest,
   Login,
+  AboutPage,
 };
