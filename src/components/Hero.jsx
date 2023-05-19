@@ -8,6 +8,7 @@ import {
   IndustryApplication,
   IndustryUseCases,
   PlatformInside,
+  AboutPage,
 } from './';
 
 const Hero = () => {
@@ -49,6 +50,9 @@ const Hero = () => {
       </div>
       <div>
         <PlatformInside />
+      </div>
+      <div>
+        <AboutPage />
       </div>
     </div>
   );

@@ -43,6 +43,7 @@ import F22 from './F22.jpg';
 import teaming_aircraft from './teaming_aircraft.jpg';
 import wildfire_wui from './wildfire_wui.jpg';
 import water_pollution from './Water-pollution.jpg';
+import founderImage from './founderImage.jpg';
 
 export {
   menublack,
@@ -90,4 +91,5 @@ export {
   wildfire_close,
   water_quality,
   lidar_of_london,
+  founderImage,
 };
