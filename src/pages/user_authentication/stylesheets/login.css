@@ -1,23 +1,24 @@
-.email-wrapper, .password-wrapper, .login-btn-wrapper, .confirm-password-wrapper, .signup-btn-wrapper {
+.email-wrapper, .password-wrapper, .login-btn-wrapper, .confirm-password-wrapper,
+.signup-btn-wrapper, .code-wrapper, .confirmation-email-wrapper, .code-btn-wrapper {
 	display: grid;
 	width: 40%;
 	margin: auto;
 	margin-top: 3rem;
 }
 
-.password-input, .email-input, .confirm-password-input {
+.password-input, .email-input, .confirm-password-input, .code-input, .confirmation-email-input {
 	border: 1px solid;
 	border-radius: 0.5rem;
 	height: 2rem;
 }
 
-.password-label, .email-label, .confirm-password-label {
+.password-label, .email-label, .confirm-password-label, .confirmation-email-label, .code-label {
 	font-size: larger;
 	font-family: monospace;
 	padding-bottom: 8px;
 }
 
-.login-btn, .signup-btn {
+.login-btn, .signup-btn, .submit-code-btn {
 	border: 1px solid;
 	border-radius: 0.5rem;
 	height: 2.5rem;
@@ -30,4 +31,11 @@
 
 .u-pad-bottom {
 	padding-bottom: 1rem;
+}
+
+.account-confirmation {
+	margin: auto;
+    font-size: 16px;
+    justify-content: center;
+    display: flex;
 }
