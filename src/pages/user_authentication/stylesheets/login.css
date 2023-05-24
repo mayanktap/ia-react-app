@@ -1,0 +1,33 @@
+.email-wrapper, .password-wrapper, .login-btn-wrapper, .confirm-password-wrapper, .signup-btn-wrapper {
+	display: grid;
+	width: 40%;
+	margin: auto;
+	margin-top: 3rem;
+}
+
+.password-input, .email-input, .confirm-password-input {
+	border: 1px solid;
+	border-radius: 0.5rem;
+	height: 2rem;
+}
+
+.password-label, .email-label, .confirm-password-label {
+	font-size: larger;
+	font-family: monospace;
+	padding-bottom: 8px;
+}
+
+.login-btn, .signup-btn {
+	border: 1px solid;
+	border-radius: 0.5rem;
+	height: 2.5rem;
+	background: #047d95;
+	color: white;
+	font-size: 1rem;
+	width: 70%;
+	margin: auto;
+}
+
+.u-pad-bottom {
+	padding-bottom: 1rem;
+}

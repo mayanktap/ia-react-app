@@ -1,0 +1,18 @@
+.user-auth-wrapper {
+	width: 50%;
+	margin: auto;
+	border: 1px solid #bcbcbc;
+	display: flex;
+	top: 140px;
+	position: relative;
+	font-family: monospace;
+}
+
+.user-auth-wrapper > div {
+	width: 100%;
+}
+
+.user-tabs {
+	display: flex;
+	justify-content: center;
+}
