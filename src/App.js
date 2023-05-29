@@ -13,7 +13,7 @@ import {
   Navbar,
   Testimonials,
   Platform,
-  Login,
+  UserAuthentication,
 } from './components';
 import UploadMedia from './pages/upload_media/UploadMedia';
 import { Routes, Route } from 'react-router-dom';
@@ -26,7 +26,7 @@ const App = () => {
       <>
         <div>
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<UserAuthentication />} />
           </Routes>
         </div>
       </>
@@ -36,7 +36,7 @@ const App = () => {
       <>
         <div>
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<UserAuthentication />} />
           </Routes>
         </div>
         <div className='bg-primary w-full overflow-hidden'>

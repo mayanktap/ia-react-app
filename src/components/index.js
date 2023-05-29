@@ -20,7 +20,7 @@ import HomePageCustomer from  './HomePageCustomer';
 import IndustryApplication from './IndustryApplications';
 import IndustryUseCases from './IndustryUseCases';
 import PlatformInside from './PlatformInside';
-import Login from './Login';
+import UserAuthentication from './UserAuthentication';
 import AboutPage from './AboutPage';
 
 export {
@@ -46,6 +46,6 @@ export {
   HomeSlider,
   HomePageCustomer,
   HomePageUploadRequest,
-  Login,
+  UserAuthentication,
   AboutPage,
 };
