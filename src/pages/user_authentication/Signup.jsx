@@ -89,7 +89,7 @@ const Signup = () => {
           <input
             ref={passwordInput}
             className="password-input"
-            type="text"
+            type="password"
             id="signuppassword"
             name="signuppassword" />
         </div>
@@ -99,7 +99,7 @@ const Signup = () => {
           <input
             ref={confirmPasswordInput}
             className="confirm-password-input" 
-            type="text"
+            type="password"
             id="signupconfirmpassword"
             name="signupconfirmpassword" />
         </div>
