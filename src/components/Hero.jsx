@@ -10,6 +10,9 @@ import {
   PlatformInside,
   AboutPage,
 } from './';
+import {
+  UploadSection,
+} from '../pages/source';
 
 const Hero = () => {
   return (
@@ -50,6 +53,7 @@ const Hero = () => {
       </div>
       <div>
         <PlatformInside />
+        <UploadSection />
       </div>
       <div>
         <AboutPage />

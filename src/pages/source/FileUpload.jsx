@@ -8,6 +8,8 @@ const FileUpload = () => {
   const [objState, setObjState] = useState(0);
   const [postSuccessMessage, setPostSuccessMessage] = useState('');
   const [postErrorMessage, setPostErrorMessage] = useState('');
+  const [flightId, setFlightId] = useState('');
+  const [vehicleId, setVehicleId] = useState('');
 
   async function onUpload(e) {
     const file = e.target.files[0];
@@ -66,6 +68,14 @@ const FileUpload = () => {
     setDescription(event.target.value);
   };
 
+  const handleFlightIdChange = (event) => {
+    setFlightId(event.target.value);
+  };
+
+  const handleVehicleIdChange = (event) => {
+    setVehicleId(event.target.value);
+  };
+
   const handleSubmit = async () => {
     console.log(`Selected tag: ${selectedTag}`);
     console.log(`Description: ${description}`);
@@ -76,6 +86,8 @@ const FileUpload = () => {
         description: description,
         selectedTag: selectedTag,
         mediaFile: state.key,
+        flightId: flightId, 
+        vehicleId: vehicleId,
       },
       headers: {
         Authorization: user.signInUserSession.idToken.jwtToken,
@@ -96,36 +108,36 @@ const FileUpload = () => {
   };
 
   return (
-    <div className='flex flex-col gap-4 py-10'>
-      <div className='flex flex-col gap-1'>
-        <label htmlFor='file_input' className='block text-black-700 font-bold mb-2'>
+    <div className='flex flex-col gap-6 py-10'>
+      <div className='flex flex-col gap-3'>
+        <label htmlFor='file_input' className='text-lg font-semibold text-gray-700'>
           Upload File
         </label>
         <input
           type='file'
           id="file_input"
-          className="w-full px-3 py-2 text-black-700 border rounded-lg"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
           onChange={onUpload}
         />
       </div>
       {
         !!objState &&
-        <div className='flex'>
-          <a href={objState.file}>{objState.key}</a>
-          <a href="#" onClick={() => handleDelete(objState.key)}>
-            <i className="material-icons">delete</i>
-          </a>
+        <div className='flex items-center gap-2'>
+          <a href={objState.file} className='text-blue-600 hover:underline'>{objState.key}</a>
+          <button onClick={() => handleDelete(objState.key)} className='text-red-600 hover:text-red-800'>
+            Delete
+          </button>
         </div>
       }
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="tag_select" className="block text-black-700 font-bold mb-2">
+      <div className="flex flex-col gap-3">
+        <label htmlFor="tag_select" className="text-lg font-semibold text-gray-700">
           Tag
         </label>
         <div className="relative">
           <select
             id="tag_select"
-            className="block appearance-none w-full px-3 py-2 border rounded-lg text-black-700 bg-white"
+            className="block appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white"
             value={selectedTag}
             onChange={handleTagChange}
           >
@@ -135,9 +147,8 @@ const FileUpload = () => {
             <option>Atmospheric</option>
             <option>Water Quality</option>
             <option>Flooding</option>
-
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black-700">
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
             <svg
               className="fill-current h-4 w-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -147,15 +158,41 @@ const FileUpload = () => {
             </svg>
           </div>
         </div>
+        <div className="flex flex-col gap-3">
+          <label htmlFor="flightId_input" className="text-lg font-semibold text-gray-700">
+            Flight ID
+          </label>
+          <input
+            id="flightId_input"
+            type="text"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="Enter Flight ID"
+            value={flightId}
+            onChange={handleFlightIdChange}
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <label htmlFor="vehicleId_input" className="text-lg font-semibold text-gray-700">
+            Vehicle ID
+          </label>
+          <input
+            id="vehicleId_input"
+            type="text"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="Enter Vehicle ID"
+            value={vehicleId}
+            onChange={handleVehicleIdChange}
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="description_input" className="block text-black-700 font-bold mb-2">
+      <div className="flex flex-col gap-3">
+        <label htmlFor="description_input" className="text-lg font-semibold text-gray-700">
           Description
         </label>
         <textarea
           id="description_input"
-          className="w-full px-3 py-2 text-black-700 border rounded-lg"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
           rows="4"
           placeholder="Enter a description"
           value={description}
@@ -164,28 +201,20 @@ const FileUpload = () => {
       </div>
 
       <button
-        className=" text-white 
-        text-extrabold
-        bg-gradient-to-r from-orange-400 via-orang-500 to-orange-600
-        hover:bg-gradient-to-br
-        focus:ring-4 focus:outline-none focus:ring-teal-300
-        dark:focus:ring-teal-800
-        font-medium rounded-lg text-sm
-        px-5 py-2.5
-        text-center"
+        className="px-6 py-3 text-lg text-white font-semibold bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
         onClick={handleSubmit}
       >
         Submit
       </button>
       {
         !!postSuccessMessage &&
-        <div className='text-white'>
+        <div className='p-2 text-white bg-green-600 rounded-lg'>
           {postSuccessMessage}
         </div>
       }
       {
         !!postErrorMessage &&
-        <div className='text-red'>
+        <div className='p-2 text-white bg-red-600 rounded-lg'>
           {postErrorMessage}
         </div>
       }
