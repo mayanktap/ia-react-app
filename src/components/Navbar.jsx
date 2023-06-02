@@ -1,20 +1,58 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { navLinks } from '../constants';
 import { menublack, skytllogo, close } from '../assets';
 import { useNavigate } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState('Home');
   const [toggle, setToggle] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const signoutLink = {
+    id: 'signout',
+    title: 'Sign Out',
+  };
 
-  function navElementClick(nav) {
+  async function navElementClick(nav) {
     if (nav.id === 'home') {
       navigate('/');
+    } else if (nav.id === 'signout') {
+      await signoutClick();
     } else {
       navigate(`/${nav.id}`);
     }
     setActive(nav.title);
+  }
+
+  async function signoutClick() {
+    try {
+      setActive('Sign Out');
+      await Auth.signOut();
+      window.location.replace(window.location.origin + '/');
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
+  }
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser({ bypassCache: false }).then((user) => {
+      console.log(user);
+      setIsLoggedIn(true);
+    }).catch((err) => {
+      setIsLoggedIn(false);
+      console.log(err);
+    });
+  }, []);
+
+  if (isLoggedIn) {
+    if (navLinks[navLinks.length - 1].id !== signoutLink.id) {
+      navLinks.push(signoutLink);
+    }
+  } else {
+    if (navLinks[navLinks.length - 1].id === signoutLink.id) {
+      navLinks.pop();
+    }
   }
 
   return (

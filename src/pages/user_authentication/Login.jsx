@@ -33,7 +33,7 @@ const Login = () => {
         <input
           ref={passwordInput}
           className="password-input"
-          type="text"
+          type="password"
           id="password"
           name="password" />
       </div>
