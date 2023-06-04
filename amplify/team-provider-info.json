@@ -46,11 +46,11 @@
       "function": {
         "S3Triggerf0f73646": {
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
-          "s3Key": "amplify-builds/S3Triggerf0f73646-764e525952356b76464b-build.zip"
+          "s3Key": "amplify-builds/S3Triggerf0f73646-6f5930636c5237354d68-build.zip"
         },
         "mediaInformationHandler": {
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
-          "s3Key": "amplify-builds/mediaInformationHandler-7a61386b557653776446-build.zip"
+          "s3Key": "amplify-builds/mediaInformationHandler-2b7647496336576c4e52-build.zip"
         },
         "productEnquiryFn": {
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",

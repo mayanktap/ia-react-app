@@ -13,7 +13,8 @@ class MediaInfo {
 
   async create() {
     this.evtBody = JSON.parse(this.evt['body']);
-    this.recordId = `${this.checkFileType(this.evtBody.mediaFile)}_${this.evtBody.mediaFile.replace(' ', '+')}`;
+    const filenameArray = this.evtBody.mediaFile.split('/');
+    this.recordId = filenameArray[filenameArray.length - 1];
     const params = {
       TableName: this.tableName,
       Item: await this.itemToPush(),
@@ -96,6 +97,9 @@ class MediaInfo {
       formattedDate: `${currentDate.toISOString().substring(0, 10)}-upload_media_information`,
       description: this.evtBody.description,
       tag: this.evtBody.selectedTag,
+      mediaFile: this.evtBody.mediaFile,
+      flightId: this.evtBody.flightId,
+      vehicleId: this.evtBody.vehicleId,
       userSub: user.sub,
       userEmail: user.email,
       createdAt: epochTimestamp,

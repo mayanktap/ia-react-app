@@ -27,12 +27,12 @@ const FileUpload = () => {
           console.error(error);
         }
       }
-      Storage.put(file.name, file, {
+      Storage.put(`${user.attributes.sub}/${file.name}`, file, {
         contentType: 'image/png',
       }).then(async (result) => {
         setState({
           file: URL.createObjectURL(file),
-          key: file.name,
+          key: `${user.attributes.sub}/${file.name}`,
         });
         console.log(result);
       });
@@ -57,8 +57,11 @@ const FileUpload = () => {
 
   async function handleDelete(imageKey) {
     try {
-      await Storage.remove(imageKey);
+      const user = await Auth.currentAuthenticatedUser();
+      await Storage.remove(`${user.attributes.sub}/${imageKey}`);
       alert('Image deleted successfully');
+      setObjState(0);
+      document.querySelector('.js-upload-input').value = '';
     } catch (error) {
       console.error(error);
       alert('Failed to delete image.');
@@ -122,6 +125,7 @@ const FileUpload = () => {
           setDescription('');
           setObjState(0);
           setState(0);
+          document.querySelector('.js-upload-input').value = '';
           setPostSuccessMessage('Relevant Data is successfully created.');
         }
       }).catch(err => {
@@ -140,7 +144,7 @@ const FileUpload = () => {
       <div className='flex flex-col gap-6 py-10'>
         <div className='flex flex-col gap-3'>
           <label htmlFor='file_input' className='text-lg font-semibold text-gray-700'>
-            Upload File
+            Upload Media
           </label>
           <input
             type='file'

@@ -8,7 +8,7 @@ class Dynamo {
   constructor(s3EvtRecord) {
     this.tableName = `${process.env.dynamoname}-${process.env.ENV}`;
     this.s3EvtRecord = s3EvtRecord;
-    this.bucket = s3EvtRecord.s3.bucket.name;
+    this.bucketName = s3EvtRecord.s3.bucket.name;
     this.s3Object = s3EvtRecord.s3.object;
     this.s3ObjectKey = this.s3Object.key;
   }
@@ -29,12 +29,13 @@ class Dynamo {
   }
 
   async delete() {
-    const partitionKey =`${this.checkFileType(this.s3ObjectKey)}_${this.s3ObjectKey.replace('public/', '')}`;
-    const item = await this.getItemFromPartition(partitionKey);
+    const filenameArray = this.s3ObjectKey.split('/');
+    const filename = filenameArray[filenameArray.length - 1];
+    const item = await this.getItemFromPartition(filename);
     const params = {
       TableName: this.tableName,
       Key: {
-        recordId: partitionKey,
+        recordId: filename,
         formattedDate: item.formattedDate,
       },
     };
@@ -54,13 +55,17 @@ class Dynamo {
   get itemToPush() {
     const currentDate = new Date();
     const epochTimestamp = currentDate.getTime();
+    const filenameArray = this.s3ObjectKey.split('/');
+    const filename = filenameArray[filenameArray.length - 1];
 
     return {
-      recordId: `${this.checkFileType(this.s3ObjectKey)}_${this.s3ObjectKey.replace('public/', '')}`,
-      formattedDate: `${currentDate.toISOString().substring(0, 10)}-s3_media_metadata`,
+      recordId: filename,
+      formattedDate: `${currentDate.toISOString().substring(0, 10)}-s3_media_metadata_${filename}`,
       mediaType: this.checkFileType(this.s3ObjectKey),
-      fileName: this.s3ObjectKey.replace('public/', ''),
-      fileExtension: this.s3ObjectKey.substr(this.s3ObjectKey.lastIndexOf('.') + 1),
+      userSub: filenameArray[1],
+      bucketName: this.bucketName,
+      fileName: filename,
+      fileExtension: filename.substr(filename.lastIndexOf('.') + 1),
       createdAt: epochTimestamp,
       updateAt: epochTimestamp,
       size: this.s3Object.size,
