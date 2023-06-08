@@ -1,4 +1,6 @@
 import FileUpload from './FileUpload';
+import DroneDataUpload from './DroneDataUpload';
+import { Tabs, TabItem } from '@aws-amplify/ui-react';
 
 function UploadSection() {
   return (
@@ -16,7 +18,18 @@ function UploadSection() {
           </div>
           <div className="mt-8 md:mt-0">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <FileUpload />
+              <Tabs>
+                <TabItem
+                  className='js-heatmap'
+                  title="Upload Media">
+                  <FileUpload />
+                </TabItem>
+                <TabItem
+                  className='js-geomap'
+                  title="Upload Drone Data">
+                  <DroneDataUpload />
+                </TabItem>
+              </Tabs>
             </div>
           </div>
         </div>

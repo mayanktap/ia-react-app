@@ -1,19 +1,20 @@
+import Modal from './../modal/Modal';
 import { useEffect, useState } from 'react';
 import { Storage, API, Auth } from 'aws-amplify';
-import Modal from './../modal/Modal';
 
-const FileUpload = () => {
-  const [selectedTag, setSelectedTag] = useState('Select a tag');
-  const [description, setDescription] = useState('');
+const DroneDataUpload = () => {
   const [state, setState] = useState(0);
   const [objState, setObjState] = useState(0);
   const [postSuccessMessage, setPostSuccessMessage] = useState('');
   const [postErrorMessage, setPostErrorMessage] = useState('');
-  const [flightId, setFlightId] = useState('');
-  const [vehicleId, setVehicleId] = useState('');
+  const [description, setDescription] = useState('');
   const [showModal, setShowModal] = useState(false);
   const closeModalHandler = () => {
     setShowModal(false);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
   };
 
   async function onUpload(e) {
@@ -28,11 +29,11 @@ const FileUpload = () => {
         }
       }
       Storage.put(`${user.attributes.sub}/${file.name}`, file, {
-        contentType: 'image/png',
+        contentType: 'text/csv',
       }).then(async (result) => {
         setState({
           file: URL.createObjectURL(file),
-          key: `${user.attributes.sub}/${file.name}`,
+          key: `${file.name}`,
         });
         console.log(result);
       });
@@ -40,19 +41,6 @@ const FileUpload = () => {
       setShowModal(true);
       console.log(err);
     });
-  }
-
-  async function handleShowMedia(imageKey) {
-    try {
-      const signedURL = await Storage.get(imageKey, { level: 'public' });
-      setObjState({
-        file: signedURL,
-        key: imageKey,
-      });
-    } catch (error) {
-      console.error(error);
-      alert('Failed to show images');
-    }
   }
 
   async function handleDelete(imageKey) {
@@ -68,58 +56,19 @@ const FileUpload = () => {
     }
   }
 
-  useEffect(() => {
-    if(state) {
-      handleShowMedia(state.key);
-    }
-  }, [state]);
-
-  useEffect(() => {
-    document.querySelector('.js-upload-input').addEventListener('click', function(evt) {
-      Auth.currentAuthenticatedUser({ bypassCache: false }).then((user) => {
-        console.log(user);
-      }).catch((err) => {
-        evt.preventDefault();
-        setShowModal(true);
-        console.log(err);
-      });
-    });
-  }, []);
-
-  const handleTagChange = (event) => {
-    setSelectedTag(event.target.value);
-  };
-
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
-
-  const handleFlightIdChange = (event) => {
-    setFlightId(event.target.value);
-  };
-
-  const handleVehicleIdChange = (event) => {
-    setVehicleId(event.target.value);
-  };
-
   const handleSubmit = async () => {
-    console.log(`Selected tag: ${selectedTag}`);
     console.log(`Description: ${description}`);
-
+  
     Auth.currentAuthenticatedUser({ bypassCache: false }).then((user) => {
       API.post('useruploadedmediainfo', '/media-info', {
         body: {
           description: description,
-          selectedTag: selectedTag,
           mediaFile: state.key,
-          flightId: flightId,
-          vehicleId: vehicleId,
         },
         headers: { Authorization: user.signInUserSession.idToken.jwtToken },
       }).then(response => {
         console.log(response);
         if (response === 'Record Successfully created') {
-          setSelectedTag('Select a tag');
           setDescription('');
           setObjState(0);
           setState(0);
@@ -136,13 +85,32 @@ const FileUpload = () => {
     });
   };
 
+  async function handleShowMedia(imageKey) {
+    try {
+      const signedURL = await Storage.get(imageKey, { level: 'public' });
+      setObjState({
+        file: signedURL,
+        key: imageKey,
+      });
+    } catch (error) {
+      console.error(error);
+      alert('Failed to show images');
+    }
+  }
+
+  useEffect(() => {
+    if(state) {
+      handleShowMedia(state.key);
+    }
+  }, [state]);
+
   return (
     <div>
       { showModal && <Modal closeModalFunc={closeModalHandler} /> }
       <div className='flex flex-col gap-6 py-10'>
         <div className='flex flex-col gap-3'>
           <label htmlFor='file_input' className='text-lg font-semibold text-gray-700'>
-            Upload Media
+            Upload Drone Data
           </label>
           <input
             type='file'
@@ -160,62 +128,6 @@ const FileUpload = () => {
             </button>
           </div>
         }
-
-        <div className="flex flex-col gap-3">
-          <label htmlFor="tag_select" className="text-lg font-semibold text-gray-700">
-            Tag
-          </label>
-          <div className="relative">
-            <select
-              id="tag_select"
-              className="block appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white"
-              value={selectedTag}
-              onChange={handleTagChange}
-            >
-              <option>Select a tag</option>
-              <option>Wild Fire</option>
-              <option>Agriculture</option>
-              <option>Atmospheric</option>
-              <option>Water Quality</option>
-              <option>Flooding</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg
-                className="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 12l-6-6 1.41-1.41L10 9.17l4.59-4.58L16 6l-6 6z" />
-              </svg>
-            </div>
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="flightId_input" className="text-lg font-semibold text-gray-700">
-              Flight ID
-            </label>
-            <input
-              id="flightId_input"
-              type="text"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-              placeholder="Enter Flight ID"
-              value={flightId}
-              onChange={handleFlightIdChange}
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="vehicleId_input" className="text-lg font-semibold text-gray-700">
-              Vehicle ID
-            </label>
-            <input
-              id="vehicleId_input"
-              type="text"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-              placeholder="Enter Vehicle ID"
-              value={vehicleId}
-              onChange={handleVehicleIdChange}
-            />
-          </div>
-        </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="description_input" className="text-lg font-semibold text-gray-700">
@@ -254,4 +166,4 @@ const FileUpload = () => {
   );
 };
 
-export default FileUpload;
+export default DroneDataUpload;
