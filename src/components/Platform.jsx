@@ -4,6 +4,7 @@ import HeatMap from './../pages/geo_map/HeatMap';
 import { Auth } from 'aws-amplify';
 import Modal from './../pages/modal/Modal';
 import { useState, useEffect } from 'react';
+import { PlatformInside } from './';
 
 const Platform = () => {
   const [showModal, setShowModal] = useState(false);
@@ -25,6 +26,9 @@ const Platform = () => {
 
   return (
     <div>
+      <div>
+        <PlatformInside />
+      </div>
       { showModal && <Modal closeModalFunc={closeModalHandler} /> }
       <Tabs>
         <TabItem

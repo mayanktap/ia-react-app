@@ -30,7 +30,7 @@ export default function PlatformInside() {
   }, []);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-8">
       <h1 className="text-4xl font-semibold text-left text-teal-500 mt-20">
         <span className="text-gradient">Explore </span>
         <span className="text-gradient">Our </span>

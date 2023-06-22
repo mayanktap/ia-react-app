@@ -57,6 +57,7 @@ class Dynamo {
     const epochTimestamp = currentDate.getTime();
     const filenameArray = this.s3ObjectKey.split('/');
     const filename = filenameArray[filenameArray.length - 1];
+    const recordType = filename.substr(filename.lastIndexOf('.') + 1) === 'csv' ? 's3_drone_data' : 's3_media_metadata';
 
     return {
       recordId: filename,
@@ -70,7 +71,7 @@ class Dynamo {
       updateAt: epochTimestamp,
       size: this.s3Object.size,
       etag: this.s3Object.eTag,
-      recordType: 's3_media_metadata',
+      recordType: recordType,
     };
   }
 
@@ -103,12 +104,15 @@ class Dynamo {
   checkFileType(fileName) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp'];
     const videoExtensions = ['.mp4', '.mkv', '.avi', '.mov', '.wmv'];
+    const excelExtensions = ['.csv', '.xlsx'];
     const fileExtension = fileName.substr(fileName.lastIndexOf('.'));
 
     if (imageExtensions.includes(fileExtension)) {
       return 'image';
     } else if (videoExtensions.includes(fileExtension)) {
       return 'video';
+    } else if (excelExtensions.includes(fileExtension)) {
+      return 'excel';
     } else {
       return 'unknown';
     }
