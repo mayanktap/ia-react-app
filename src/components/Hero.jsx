@@ -1,18 +1,10 @@
 import { lidar_of_london } from '../assets';
-import { 
-  Stats, 
+import {
   HomePageCustomer,
   HyperLocalData,
   HomeSlider,
   HomePageMachineLearning,
-  IndustryApplication,
-  IndustryUseCases,
-  PlatformInside,
-  AboutPage,
 } from './';
-import {
-  UploadSection,
-} from '../pages/source';
 
 const Hero = () => {
   return (
@@ -37,27 +29,16 @@ const Hero = () => {
       </section>
       
       <section>
-        <div className="mb-8 mt-8"> {/* Add margin-bottom */}
+        <div className="mb-8 mt-8">
           <HyperLocalData />
         </div>
       </section>
-      <Stats />
+      {/* <Stats /> */}
       <HomePageMachineLearning />
       <div className="slider-container">
         <HomeSlider />
       </div>
       <HomePageCustomer />
-      <div>
-        <IndustryApplication />
-        <IndustryUseCases />
-      </div>
-      <div>
-        <PlatformInside />
-        <UploadSection />
-      </div>
-      <div>
-        <AboutPage />
-      </div>
     </div>
   );
 };

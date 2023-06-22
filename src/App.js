@@ -3,6 +3,7 @@ import '@aws-amplify/ui-react/styles.css';
 import styles from './style';
 import awsExports from './aws-exports';
 import {
+  AboutUs,
   Billing,
   Business,
   CardDeal,
@@ -10,9 +11,11 @@ import {
   CTA,
   Footer,
   Hero,
+  Industry,
   Navbar,
   Testimonials,
   Platform,
+  UasOperator,
   UserAuthentication,
 } from './components';
 import UploadMedia from './pages/upload_media/UploadMedia';
@@ -47,6 +50,9 @@ const App = () => {
             <div className={`${styles.boxWidth}`}>
               <Routes>
                 <Route path="/" element={<Hero />} />
+                <Route path="/industries" element={<Industry />} />
+                <Route path="/uas-operators" element={<UasOperator />} />
+                <Route path="/about" element={<AboutUs />} />
                 <Route path="/features" element={<Business />} />
                 <Route path="/product" element={<Billing />} />
                 <Route path="/carddeal" element={<CardDeal />} />

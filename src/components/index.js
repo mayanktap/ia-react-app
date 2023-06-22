@@ -22,8 +22,12 @@ import IndustryUseCases from './IndustryUseCases';
 import PlatformInside from './PlatformInside';
 import UserAuthentication from './UserAuthentication';
 import AboutPage from './AboutPage';
+import Industry from './Industry';
+import UasOperator from './UasOperator';
+import AboutUs from './AboutUs';
 
 export {
+  AboutUs,
   Navbar,
   Billing,
   Business,
@@ -39,6 +43,7 @@ export {
   HomePageDataProvider,
   HomePageFeatures,
   Platform,
+  Industry,
   IndustryApplication,
   PlatformInside,
   IndustryUseCases,
@@ -48,4 +53,5 @@ export {
   HomePageUploadRequest,
   UserAuthentication,
   AboutPage,
+  UasOperator,
 };
