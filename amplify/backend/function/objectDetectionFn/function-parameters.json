@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "geo": {
+      "geofenceCollectionc4084089": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "map4e0345ed": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "files": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "usermediametadata": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "rdsUsername",
+      "environmentVariableName": "rdsUsername"
+    },
+    {
+      "cloudFormationParameterName": "rdsPassword",
+      "environmentVariableName": "rdsPassword"
+    },
+    {
+      "cloudFormationParameterName": "rdsEndpoint",
+      "environmentVariableName": "rdsEndpoint"
+    }
+  ]
+}

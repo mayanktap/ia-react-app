@@ -26,6 +26,19 @@
           "delete"
         ]
       }
+    },
+    "/object-detection-data": {
+      "name": "/object-detection-data",
+      "lambdaFunction": "objectDetectionFn",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

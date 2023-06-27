@@ -48,6 +48,14 @@
           ],
           "category": "function",
           "resourceName": "productEnquiryFn"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "objectDetectionFn"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -106,6 +114,43 @@
     },
     "mediaInformationHandler": {
       "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "objectDetectionFn": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name"
+          ],
+          "category": "geo",
+          "resourceName": "geofenceCollectionc4084089"
+        },
+        {
+          "attributes": [
+            "Name"
+          ],
+          "category": "geo",
+          "resourceName": "map4e0345ed"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "files"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "usermediametadata"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -203,6 +248,46 @@
         {
           "category": "function",
           "resourceName": "mediaInformationHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_objectDetectionFn_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_objectDetectionFn_rdsEndpoint": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_objectDetectionFn_rdsPassword": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_objectDetectionFn_rdsUsername": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
+        }
+      ]
+    },
+    "AMPLIFY_function_objectDetectionFn_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
         }
       ]
     },
