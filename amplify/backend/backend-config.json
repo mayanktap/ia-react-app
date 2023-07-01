@@ -259,6 +259,14 @@
         }
       ]
     },
+    "AMPLIFY_function_objectDetectionFn_rdsDatabaseName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "objectDetectionFn"
+        }
+      ]
+    },
     "AMPLIFY_function_objectDetectionFn_rdsEndpoint": {
       "usedBy": [
         {

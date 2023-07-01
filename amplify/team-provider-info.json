@@ -58,11 +58,12 @@
           "dynamoname": "usermediametadata"
         },
         "objectDetectionFn": {
-          "rdsUsername": "admin",
-          "rdsPassword": "adminpassword",
-          "rdsEndpoint": "database-1.cubcdvxtpsiw.us-east-2.rds.amazonaws.com",
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
-          "s3Key": "amplify-builds/objectDetectionFn-674f3077395932695865-build.zip"
+          "s3Key": "amplify-builds/objectDetectionFn-355a4c69336557446951-build.zip",
+          "rdsUsername": "admin",
+          "rdsEndpoint": "database-1.cubcdvxtpsiw.us-east-2.rds.amazonaws.com",
+          "rdsPassword": "IATampaPassword",
+          "rdsDatabaseName": "drone_capture_data"
         }
       },
       "geo": {

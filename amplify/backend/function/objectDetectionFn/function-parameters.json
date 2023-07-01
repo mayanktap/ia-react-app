@@ -36,12 +36,16 @@
       "environmentVariableName": "rdsUsername"
     },
     {
+      "cloudFormationParameterName": "rdsEndpoint",
+      "environmentVariableName": "rdsEndpoint"
+    },
+    {
       "cloudFormationParameterName": "rdsPassword",
       "environmentVariableName": "rdsPassword"
     },
     {
-      "cloudFormationParameterName": "rdsEndpoint",
-      "environmentVariableName": "rdsEndpoint"
+      "cloudFormationParameterName": "rdsDatabaseName",
+      "environmentVariableName": "rdsDatabaseName"
     }
   ]
 }

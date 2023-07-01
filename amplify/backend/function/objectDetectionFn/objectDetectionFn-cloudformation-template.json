@@ -16,15 +16,6 @@
     "s3Key": {
       "Type": "String"
     },
-    "rdsUsername": {
-      "Type": "String"
-    },
-    "rdsPassword": {
-      "Type": "String"
-    },
-    "rdsEndpoint": {
-      "Type": "String"
-    },
     "geogeofenceCollectionc4084089Name": {
       "Type": "String",
       "Default": "geogeofenceCollectionc4084089Name"
@@ -48,6 +39,18 @@
     "storageusermediametadataStreamArn": {
       "Type": "String",
       "Default": "storageusermediametadataStreamArn"
+    },
+    "rdsUsername": {
+      "Type": "String"
+    },
+    "rdsEndpoint": {
+      "Type": "String"
+    },
+    "rdsPassword": {
+      "Type": "String"
+    },
+    "rdsDatabaseName": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -124,11 +127,14 @@
             "rdsUsername": {
               "Ref": "rdsUsername"
             },
+            "rdsEndpoint": {
+              "Ref": "rdsEndpoint"
+            },
             "rdsPassword": {
               "Ref": "rdsPassword"
             },
-            "rdsEndpoint": {
-              "Ref": "rdsEndpoint"
+            "rdsDatabaseName": {
+              "Ref": "rdsDatabaseName"
             }
           }
         },
