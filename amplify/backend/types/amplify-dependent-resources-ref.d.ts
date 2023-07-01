@@ -40,6 +40,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
+    "objectDetectionFn": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "productEnquiryFn": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

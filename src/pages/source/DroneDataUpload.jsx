@@ -99,6 +99,15 @@ const DroneDataUpload = () => {
   }
 
   useEffect(() => {
+    document.querySelector('.js-upload-input').addEventListener('click', function(evt) {
+      Auth.currentAuthenticatedUser({ bypassCache: false }).then((user) => {
+        console.log(user);
+      }).catch((err) => {
+        evt.preventDefault();
+        setShowModal(true);
+        console.log(err);
+      });
+    });
     if(state) {
       handleShowMedia(state.key);
     }

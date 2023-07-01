@@ -19,7 +19,6 @@ import HomePageUploadRequest from './HomePageUploadRequest';
 import HomePageCustomer from  './HomePageCustomer';
 import IndustryApplication from './IndustryApplications';
 import IndustryUseCases from './IndustryUseCases';
-import PlatformInside from './PlatformInside';
 import UserAuthentication from './UserAuthentication';
 import AboutPage from './AboutPage';
 import Industry from './Industry';
@@ -45,7 +44,6 @@ export {
   Platform,
   Industry,
   IndustryApplication,
-  PlatformInside,
   IndustryUseCases,
   HyperLocalData,
   HomeSlider,
