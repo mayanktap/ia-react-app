@@ -8,8 +8,13 @@
 
 .table-header {
     background-color: #0d9488;
+    min-width: 100px;
 }
 
 .table, .table-header, .td {
     border: 1px solid white;
+}
+
+.td {
+    text-align: center;
 }

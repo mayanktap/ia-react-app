@@ -25,7 +25,9 @@ function ObjectDetection({ data }) {
             {data.map((item, index) => (
               <tr key={index}>
                 <td className='td'>{item['email']}</td>
-                <td className='td'>{item['s3_url']}</td>
+                <td className='td'>
+                  <img src={item['s3_url']} width="100" height="100" />
+                </td>
                 <td className='td'>{item['s3_etag']}</td>
                 <td className='td'>{item['object_type']}</td>
                 <td className='td'>{item['bounding_box_x']}</td>
