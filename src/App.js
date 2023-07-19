@@ -24,7 +24,7 @@ import { Routes, Route } from 'react-router-dom';
 Amplify.configure(awsExports);
 
 const App = () => {
-  if (window.location.pathname === '/login' ) {
+  if (['/login', '/login/'].includes(window.location.pathname)) {
     return (
       <>
         <div>

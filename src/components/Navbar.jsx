@@ -13,12 +13,18 @@ const Navbar = () => {
     id: 'signout',
     title: 'Sign Out',
   };
+  const signinLink = {
+    id: 'signin',
+    title: 'Sign In',
+  };
 
   async function navElementClick(nav) {
     if (nav.id === 'home') {
       navigate('/');
     } else if (nav.id === 'signout') {
       await signoutClick();
+    } else if (nav.id === 'signin') {
+      window.location.replace(window.location.origin + '/login');
     } else {
       navigate(`/${nav.id}`);
     }
@@ -52,6 +58,7 @@ const Navbar = () => {
   } else {
     if (navLinks[navLinks.length - 1].id === signoutLink.id) {
       navLinks.pop();
+      navLinks.push(signinLink);
     }
   }
 
