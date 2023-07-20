@@ -1,5 +1,6 @@
 import { Tabs, TabItem } from '@aws-amplify/ui-react';
 import GeoMap from './../pages/geo_map/GeoMap';
+import MyApplicationsPage from './../pages/platform/MyApplications';
 import HeatMap from './../pages/geo_map/HeatMap';
 import ObjectDetection from './../pages/object_detection/ObjectDetection';
 import { API, Auth } from 'aws-amplify';
@@ -77,6 +78,7 @@ const Platform = () => {
   return (
     <div>
       <div className="space-y-8 pb-8">
+        <MyApplicationsPage />
         <h1 className="text-4xl font-semibold text-left text-teal-500 mt-20">
           <span className="text-gradient">Explore </span>
           <span className="text-gradient">Our </span>
