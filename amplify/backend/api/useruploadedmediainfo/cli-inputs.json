@@ -33,6 +33,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/object-detection-url/{path}": {
+      "name": "/object-detection-url/{path}",
+      "lambdaFunction": "objectDetectionFn",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
