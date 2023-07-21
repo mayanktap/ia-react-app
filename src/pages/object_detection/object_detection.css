@@ -1,20 +1,30 @@
 .table-container {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .table {
-    width: 100%;
+  width: 100%;
 }
 
 .table-header {
-    background-color: #0d9488;
-    min-width: 100px;
+  background-color: #0d9488;
+  min-width: 100px;
 }
 
 .table, .table-header, .td {
-    border: 1px solid white;
+  border: 1px solid white;
 }
 
 .td {
-    text-align: center;
+  text-align: center;
+}
+
+.view-image {
+  border: none;
+  text-decoration: underline;
+}
+
+.image-body {
+  width: 30rem;
+  height: 16rem;
 }

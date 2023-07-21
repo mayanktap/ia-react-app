@@ -59,7 +59,7 @@
         },
         "objectDetectionFn": {
           "deploymentBucketName": "amplify-amplifyauthapp-develop-134627-deployment",
-          "s3Key": "amplify-builds/objectDetectionFn-355a4c69336557446951-build.zip",
+          "s3Key": "amplify-builds/objectDetectionFn-4357515a6a325551544a-build.zip",
           "rdsUsername": "admin",
           "rdsEndpoint": "database-1.cubcdvxtpsiw.us-east-2.rds.amazonaws.com",
           "rdsPassword": "IATampaPassword",

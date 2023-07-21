@@ -12,13 +12,46 @@
   rdsEndpoint
 Amplify Params - DO NOT EDIT */
 const mysql = require('mysql');
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3({
+  signatureVersion: 'v4',
+});
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 exports.handler = async (event) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
+  if (event['path'] === '/object-detection-data') {
+    const result = await extractObjDetectionData();
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*"
+      },
+      body: JSON.stringify(result),
+    };
+  } else if (event['path'].includes('object-detection-url')) {
+    try {
+      const signedUrl = await s3.getSignedUrlPromise('getObject', prepareS3Params(event));
+      console.log(`signedUrl: ${signedUrl}`);
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+        body: JSON.stringify({ signedUrl }),
+      };
+    } catch (error) {
+      console.error('Error generating signed URL:', error);
+      throw error;
+    }
+  }
+};
 
+async function extractObjDetectionData() {
   const endpoint = process.env.rdsEndpoint;
   const username = process.env.rdsUsername;
   const password = process.env.rdsPassword;
@@ -40,15 +73,17 @@ exports.handler = async (event) => {
   // Close the database connection
   connection.end();
 
+  return result;
+}
+
+function prepareS3Params(event) {
+  const s3Details = event['path'].replace('/object-detection-url/','').split('.s3.amazonaws.com/');
   return {
-    statusCode: 200,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*"
-    },
-    body: JSON.stringify(result),
+    Bucket: s3Details[0],
+    Key: s3Details[1],
+    Expires: 300,
   };
-};
+}
 
 function executeQuery(connection, query) {
   return new Promise((resolve, reject) => {
