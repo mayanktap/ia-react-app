@@ -1,21 +1,29 @@
-.email-wrapper, .password-wrapper, .login-btn-wrapper, .confirm-password-wrapper,
-.signup-btn-wrapper, .code-wrapper, .confirmation-email-wrapper, .code-btn-wrapper {
+.firstname-wrapper, .lastname-wrapper, .email-wrapper, .password-wrapper, .login-btn-wrapper,
+.confirm-password-wrapper, .signup-btn-wrapper, .code-wrapper, .confirmation-email-wrapper,
+.code-btn-wrapper, .group-select-wrapper {
 	display: grid;
 	width: 40%;
 	margin: auto;
 	margin-top: 3rem;
 }
 
-.password-input, .email-input, .confirm-password-input, .code-input, .confirmation-email-input {
+.password-input, .email-input, .confirm-password-input, .code-input, .confirmation-email-input,
+.lastname-input, .firstname-input, .user-group-select {
 	border: 1px solid;
 	border-radius: 0.5rem;
 	height: 2rem;
 }
 
-.password-label, .email-label, .confirm-password-label, .confirmation-email-label, .code-label {
+.user-group-select {
+	background: transparent;
+	width: 100%;
+}
+
+.password-label, .email-label, .confirm-password-label, .confirmation-email-label, .code-label,
+.firstname-label, .lastname-label, .group-label {
 	font-size: larger;
 	font-family: monospace;
-	padding-bottom: 8px;
+	padding-bottom: 0.5rem;
 }
 
 .login-btn, .signup-btn, .submit-code-btn {
@@ -38,4 +46,10 @@
     font-size: 16px;
     justify-content: center;
     display: flex;
+}
+
+.error-msg {
+	color: red;
+	margin: auto;
+	width: 40%;
 }
