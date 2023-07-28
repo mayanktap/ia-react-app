@@ -9,25 +9,62 @@ const Signup = () => {
   const confirmPasswordInput = useRef(null);
   const confirmationemailInput = useRef(null);
   const confirmationCodeInput = useRef(null);
+  const firstnameInput = useRef(null);
+  const lastnameInput = useRef(null);
+  const groupOptions = [
+    { id: 0, value: 'None' },
+    { id: 1, value: 'Improving Aviation' },
+    { id: 2, value: 'Skytl' },
+    { id: 3, value: 'Federal Aviation Administration' },
+  ];
+  const [groupValue, setGroupValue] = useState('');
+  const handleChange = (event) => {
+    setGroupValue(event.target.value);
+  };
+  const [errorType, setErrorType] = useState('');
 
   async function signupClick() {
-    try {
-      if (passwordInput.current.value === confirmPasswordInput.current.value) {
-        const { user } = await Auth.signUp({
-          username: emailInput.current.value,
-          password: passwordInput.current.value,
-          attributes: {
-            email: emailInput.current.value,
-          },
-          autoSignIn: { // optional - enables auto sign in after user is confirmed
-            enabled: true,
-          },
-        });
-        console.log(user);
-        setShowConfirmationCode(true);
+    if (validateSignUpData()) {
+      try {
+        if (passwordInput.current.value === confirmPasswordInput.current.value) {
+          const { user } = await Auth.signUp({
+            username: emailInput.current.value,
+            password: passwordInput.current.value,
+            attributes: {
+              given_name: firstnameInput.current.value,
+              family_name: lastnameInput.current.value,
+              email: emailInput.current.value,
+              'custom:group': groupValue,
+            },
+            autoSignIn: { // optional - enables auto sign in after user is confirmed
+              enabled: true,
+            },
+          });
+          console.log(user);
+          setShowConfirmationCode(true);
+        }
+      } catch (error) {
+        console.log('error signing up:', error);
       }
-    } catch (error) {
-      console.log('error signing up:', error);
+    }
+  }
+
+  function validateSignUpData() {
+    if (!firstnameInput.current.value) {
+      setErrorType('firstname');
+      return false;
+    } else if (!lastnameInput.current.value) {
+      setErrorType('lastname');
+      return false;
+    } else if (!emailInput.current.value || !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.current.value))) {
+      setErrorType('email');
+      return false;
+    } else if (!passwordInput.current.value || passwordInput.current.value !== confirmPasswordInput.current.value) {
+      setErrorType('password');
+      return false;
+    } else {
+      setErrorType('');
+      return true;
     }
   }
 
@@ -74,6 +111,28 @@ const Signup = () => {
   } else {
     return (
       <div>
+        <div className="firstname-wrapper">
+          <label className="firstname-label" htmlFor="firstname">First Name</label>
+          <input
+            ref={firstnameInput}
+            className="firstname-input"
+            type="text"
+            id="firstname"
+            name="firstname" />
+        </div>
+        { errorType == 'firstname' && <div className='error-msg'>Enter valid Firstname</div> }
+
+        <div className="lastname-wrapper">
+          <label className="lastname-label" htmlFor="lastname">Last Name</label>
+          <input
+            ref={lastnameInput}
+            className="lastname-input"
+            type="text"
+            id="lastname"
+            name="lastname" />
+        </div>
+        { errorType == 'lastname' && <div className='error-msg'>Enter valid Last Name</div> }
+
         <div className="email-wrapper">
           <label className="email-label" htmlFor="signupemail">Email</label>
           <input
@@ -82,6 +141,16 @@ const Signup = () => {
             type="text"
             id="signupemail"
             name="signupemail" />
+        </div>
+        { errorType == 'email' && <div className='error-msg'>Enter valid Email ID</div> }
+
+        <div className='group-select-wrapper'>
+          <label className="group-label">Select Group</label>
+          <select className='user-group-select' value={groupValue} onChange={handleChange}>
+            {groupOptions.map((option) => (
+              <option value={option.value} key={option.id}>{option.value}</option>
+            ))}
+          </select>
         </div>
   
         <div className="password-wrapper">
@@ -103,7 +172,8 @@ const Signup = () => {
             id="signupconfirmpassword"
             name="signupconfirmpassword" />
         </div>
-  
+        { errorType == 'password' && <div className='error-msg'>Password does not match with Confirm Password</div> }
+
         <div className="signup-btn-wrapper  u-pad-bottom">
           <button
             className='signup-btn'
@@ -113,5 +183,5 @@ const Signup = () => {
     );
   }
 };
-  
+
 export default Signup;
