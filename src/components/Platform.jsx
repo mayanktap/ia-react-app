@@ -9,7 +9,8 @@ import { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 
 const Platform = () => {
-  const [sectionType, setSectionType] = useState('map');
+  const [sectionType, setSectionType] = useState('');
+  // Changing sectionType from map to empty string to hide GeoMap feature.
   const [showModal, setShowModal] = useState(false);
   const closeModalHandler = () => {
     setShowModal(false);

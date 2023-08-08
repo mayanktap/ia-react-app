@@ -20,10 +20,16 @@ import {
 } from './components';
 import UploadMedia from './pages/upload_media/UploadMedia';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 Amplify.configure(awsExports);
 
 const App = () => {
+
+  useEffect(() => {
+    document.title = 'SkyTL Cloud';
+  }, []);
+
   if (['/login', '/login/'].includes(window.location.pathname)) {
     return (
       <>
